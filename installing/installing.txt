@@ -1,0 +1,9 @@
+explicar porque não fazer com o apt
+download maven3
+descompactar tar.gz
+mover para diretório adequado
+renomeiar diretório
+configurar variável de ambiente ($PATH)
+salvar configuração em arquivo de sessão (/etc/profile ou .profile)
+destino dos diretórios e arquivos após a instalação
+confirmar a instalação
