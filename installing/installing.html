@@ -15,8 +15,8 @@
 		
 		<p>
 		Há pelo menos duas formas possíveis de instalar o Maven: através 
-		do programa apt do GNU/Linux ou configurando a variável de ambiente 
-		<strong>PATH</strong>. Com o programa <strong>apt</strong>, só há 
+		do programa <strong><em>apt</em></strong> do GNU/Linux ou configurando a variável de ambiente 
+		<strong><em>PATH</em></strong>. Com o programa <strong><em>apt</em></strong>, só há 
 		um passo necessário: executar o comando <strong>apt-get install mvn</strong>. 
 		Porém, o usuário não tem tanto controle sobre a localização dos diretórios 
 		do Maven, ao contrário da instalação manual, que foi a que eu escolhi 
@@ -30,24 +30,34 @@
 		</p>
 
 		<p>
-		Na seção <strong>Files</strong>, clique no link do arquivo 
+		Na seção <strong><em>Files</em></strong>, clique no link do arquivo 
 		<em><strong>apache-maven-3.3.9-bin.tar.gz</strong></em> e 
 		aguarde o download.
 		</p>
 
 		<p>
-		Para extrair o arquivo tar.gz, primeiro abra o Terminal e entre 
+		Para extrair o arquivo <strong><em>tar.gz</em></strong>, primeiro abra o Terminal e entre 
 		no diretório onde o arquivo foi baixado com o comando <strong>
 		cd diretório-do-arquivo</strong>. Por exemplo, se o arquivo estiver 
-		no diretório de /home/username/Downloads, o comando será 
+		no diretório <strong><em>/home/username/Downloads</em></strong>, o comando será 
 		<strong>cd /home/username/Download</strong>.
 		</p>
 
 		<p>
 		Em seguida, execute o comando <strong>tar -zxfv apache-maven-3.3.9-bin.tar.gz</strong>. 
-		Pode ser necessário instalar o programa <strong>tar</strong>, você pode instalar 
-		através do utilitário apt do GNU/Linux, com o comando 
+		Se a operação terminar corretamente, o diretório <strong><em>apache-maven-3.3.9</em></strong> 
+		será extraído para o diretório atual. Pode ser necessário instalar o programa <strong><em>tar</em></strong>, 
+		você pode instalar através do utilitário apt do GNU/Linux, com o comando 
 		<strong>apt-get install tar</strong>.
+		</p>
+		
+		<p>
+		Depois de extraído, o ideal é que o diretório seja movido para um local 
+		mais apropriado que o diretório de Downloads. Além disso, você pode querer 
+		mudar o nome do diretório do Maven para um nome mais curto, por exemplo, apenas 
+		<strong><em>maven</em></strong>. Para isso, escolha o diretório destino e mova o 
+		diretório do Maven com o comando <strong>mv apache-maven-3.3.9/ /opt/maven/</strong>, 
+		onde <strong><em>/opt/maven/</em></strong> é o diretório de destino que escolhi.
 		</p>
 	</body>
 </html>
