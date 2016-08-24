@@ -14,6 +14,10 @@
 		</p>
 		
 		<p>
+		obs: alguns comandos deste tutorial só são aceitos com o modo sudo.
+		</p>
+		
+		<p>
 		Há pelo menos duas formas possíveis de instalar o Maven: através 
 		do programa <strong><em>apt</em></strong> do GNU/Linux ou configurando a variável de ambiente 
 		<strong><em>PATH</em></strong>. Com o programa <strong><em>apt</em></strong>, só há 
@@ -40,14 +44,14 @@
 		no diretório onde o arquivo foi baixado com o comando <strong>
 		cd diretório-do-arquivo</strong>. Por exemplo, se o arquivo estiver 
 		no diretório <strong><em>/home/username/Downloads</em></strong>, o comando será 
-		<strong>cd /home/username/Download</strong>.
+		<strong>cd /home/username/Downloads</strong>.
 		</p>
 
 		<p>
-		Em seguida, execute o comando <strong>tar -zxfv apache-maven-3.3.9-bin.tar.gz</strong>. 
+		Em seguida, execute o comando <strong>tar -zxvf apache-maven-3.3.9-bin.tar.gz</strong>. 
 		Se a operação terminar corretamente, o diretório <strong><em>apache-maven-3.3.9</em></strong> 
 		será extraído para o diretório atual. Pode ser necessário instalar o programa <strong><em>tar</em></strong>, 
-		que pode ser instalado através do utilitário apt do GNU/Linux com o comando 
+		que pode ser instalado através do utilitário <strong><em>apt</em></strong> do GNU/Linux com o comando 
 		<strong>apt-get install tar</strong>.
 		</p>
 		
@@ -63,18 +67,19 @@
 		<p>
 		Agora temos que configurar a variável de ambiente <strong><em>PATH</em></strong> 
 		do GNU/Linux para que, ao digitarmos os comandos do Maven, o sistema saiba onde 
-		procurar o arquivo de execução. Para isso, basta digitar o comando 
-		<strong>export PATH=/opt/maven/bin:$PATH</strong>. Depois de alterar e exportar
-		a variável <strong><em>PATH</em></strong> já podemos começar a usar o Maven. 
-		Porém, toda vez que você iniciar uma sessão(logar) terá que digitar o comando novamente.
+		procurar o arquivo de execução. Para isso, vamos criar a variável <strong><em>M3_HOME<em></strong> 
+		com o comando <strong>export M3_HOME=/opt/maven</strong>, e incluir essa variável na variável 
+		<strong><em>PATH</em></strong> com o comando <strong>export PATH=$M3_HOME/bin:$PATH</strong>. 
+		Depois de alterar e exportar a variável <strong><em>PATH</em></strong> já podemos começar a usar o Maven. 
+		Porém, toda vez que você iniciar uma sessão(logar) terá que digitar os comandos novamente.
 		Uma forma de evitar isso é salvar o comando em algum arquivo de inicialização do GNU/Linux.
 		Tanto o arquivo <strong><em>/etc/profile</em></strong> quanto o 
 		<strong><em>/home/user/.profile</em></strong> servem ao nosso propósito, com 
 		apenas uma diferença, o <strong><em>/home/username/.profile</em></strong> só fica disponível 
 		para o seu usuário, diferentemente do <strong><em>/etc/profile</em></strong>, que fica disponível 
-		para todos os usuários do computador. Sabendo disso, abra um dos dois arquivos, copie o comando 
-		<strong>export PATH=/opt/maven/bin:$PATH</strong> ao final e depois salve o arquivo. 
-		Pode ser necessário reiniciar a sessão.
+		para todos os usuários do computador. Sabendo disso, abra um dos dois arquivos, copie os comandos
+		<strong>export M3_HOME=/opt/maven</strong> e <strong>export PATH=$M3_HOME/bin:$PATH</strong> ao final e 
+		depois salve o arquivo. Para a alteração fazer efeito é necessário reiniciar a sessão.
 		</p>
 	</body>
 </html>
