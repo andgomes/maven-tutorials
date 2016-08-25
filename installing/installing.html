@@ -10,7 +10,9 @@
 
 		<p>
 		Neste tutorial, irei apresentar os passos necessários para 
-		instalar a última versão do Apache Maven(atualmente, a 3.3).
+		instalar a última versão do Apache Maven(atualmente, a 3.3). 
+		Como o Maven é baseado em Java, o único pré-requisito é ter o JDK 
+		instalado no computador.
 		</p>
 		
 		<p>
@@ -67,7 +69,7 @@
 		<p>
 		Agora temos que configurar a variável de ambiente <strong><em>PATH</em></strong> 
 		do GNU/Linux para que, ao digitarmos os comandos do Maven, o sistema saiba onde 
-		procurar o arquivo de execução. Para isso, vamos criar a variável <strong><em>M3_HOME<em></strong> 
+		procurar o arquivo de execução. Para isso, vamos criar a variável <strong><em>M3_HOME</em></strong> 
 		com o comando <strong>export M3_HOME=/opt/maven</strong>, e incluir essa variável na variável 
 		<strong><em>PATH</em></strong> com o comando <strong>export PATH=$M3_HOME/bin:$PATH</strong>. 
 		Depois de alterar e exportar a variável <strong><em>PATH</em></strong> já podemos começar a usar o Maven. 
@@ -80,6 +82,21 @@
 		para todos os usuários do computador. Sabendo disso, abra um dos dois arquivos, copie os comandos
 		<strong>export M3_HOME=/opt/maven</strong> e <strong>export PATH=$M3_HOME/bin:$PATH</strong> ao final e 
 		depois salve o arquivo. Para a alteração fazer efeito é necessário reiniciar a sessão.
+		</p>
+		
+		<p>
+		Para testar a instalação, basta digitar o comando <strong>mvn -v</strong> 
+		ou <strong>mvn --version</strong>. Se tudo estiver correto, o resultado do comando 
+		deve ser algo parecido com o resultado abaixo.
+		
+		<p><strong>
+		Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T13:41:47-03:00) <br />
+		Maven home: /opt/maven <br />
+		Java version: 1.7.0_111, vendor: Oracle Corporation <br />
+		Java home: /usr/lib/jvm/java-7-openjdk-amd64/jre <br />
+		Default locale: pt_BR, platform encoding: UTF-8 <br />
+		OS name: "linux", version: "4.4.0-34-generic", arch: "amd64", family: "unix"
+		</strong>
 		</p>
 	</body>
 </html>
