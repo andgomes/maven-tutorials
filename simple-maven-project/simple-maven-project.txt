@@ -1,0 +1,6 @@
+criar projeto com o plugin Archetype
+tipos de archetypes
+explicar os dois modos de criar(interativo e não-interativo)
+coordenadas do projeto
+arquivo POM
+estrutura do diretório
