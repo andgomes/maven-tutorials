@@ -15,12 +15,18 @@
 		</p>
 		
 		<p>
+		obs: é necessário ter conexão com a Internet para executar corretamente
+		os comandos deste tutorial, pois o Maven faz o download dos plugins na
+		primeira vez que são necessários.
+		</p>
+
+		<p>
 		Há pelo menos duas formas de criar um projeto Maven: criando manualmente 
 		o diretório dos códigos-fonte e o arquivo pom.xml ou utilizando o goal 
 		generate do plugin Archetype. Como o objetivo do Maven é minimizar a necessidade
 		de alterar arquivos XML, escolhi a segunda forma. Também por ser a mais utilizada
 		nos livros e tutoriais de Maven. De qualquer forma, caso você queira se familiarizar
-		com o arquivo POM e criá-lo manualmente, mostrarei o arquivo gerado pelo goal generate 
+		com o arquivo POM e criá-lo manualmente, mostrarei o arquivo POM gerado pelo goal generate 
 		neste tutorial.
 		</p>
 		
@@ -29,7 +35,7 @@
 		três campos que, juntos, formarão as suas coordenadas. Esse conjunto é único para cada
 		projeto e a partir dele é que um projeto Maven é identificado. São eles:
 		<ul>
-		<li>groupId: o grupo que desenvolveu o projeto. Por convenção, o valor desse campo 
+		<li>groupId: o ID do grupo que desenvolveu o projeto. Por convenção, o valor desse campo 
 		é o domínio da instituição invertido. Exemplo: com.andgomes</li>
 		<li>artifactId: o identificador do projeto. Exemplos: simple-project, my-project</li>
 		<li>version: a versão atual do projeto. Exemplos: 1.0-SNAPSHOT, 2.4.2</li>
@@ -38,9 +44,38 @@
 		
 		<p>
 		Há dois modos de criar um projeto Maven com o plugin Archetype: o modo interativo e 
-		o modo não-interativo.
-		No modo interativo, você terá que preencher as informações à medida em que o Maven for criando
-		o projeto.
+		o modo batch(não-interativo).
+		No modo interativo, você terá que preencher as informações do projeto(groupId, artifactId, version e package) 
+		à medida em que o Maven for precisando dessas informações. Para isso, entre no diretório em que você deseja 
+		criar o projeto e execute o comando
+		</p>
+
+		<p>
+		$ mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart
+		</p>
+
+		<p>
+		aguarde o Maven fazer o download do plugin e vá preenchendo as informações do projeto. Nesse comando, 
+		archetype é o nome do plugin, generate é o nome do goal e maven-archetype-quickstart é o artifactId do 
+		archetype que estamos utilizando para criar o projeto. O Maven tem vários archetypes para cada tipo de 
+		projeto e o quickstart é o archetype para os projetos mais simples.
+		</p>
+
+		<p>
+		Uma forma mais simples ainda de criar um projeto Maven é criando no modo batch(não-interativo). 
+		Para isso, execute o comando
+		</p>
+
+		<p>
+		$ mvn archetype:generate -DgroupId=com.andgomes -DartifactId=simple-project
+		-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+		</p>
+
+		<p>
+		e aguarde o Maven concluir a operação. Ao criar um projeto no modo batch, você
+		está dizendo ao Maven para utilizar os valores-padrão nos campos que você não
+		informou. O valor do package, que será a estrutura dos pacotes do seu código-fonte, 
+		será o mesmo valor do groupId e o valor do version será 1.0-SNAPSHOT. 
 		</p>
 	</body>
 </html>
