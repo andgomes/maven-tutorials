@@ -75,7 +75,107 @@
 		e aguarde o Maven concluir a operação. Ao criar um projeto no modo batch, você
 		está dizendo ao Maven para utilizar os valores-padrão nos campos que você não
 		informou. O valor do package, que será a estrutura dos pacotes do seu código-fonte, 
-		será o mesmo valor do groupId e o valor do version será 1.0-SNAPSHOT. 
+		será o mesmo valor do groupId e o valor do version será 1.0-SNAPSHOT. Quando o 
+        interactiveMode é false você tem que informar o groupId e o artifactId no comando,
+        caso contrário, o Maven irá lançar um erro e o projeto não será criado.
 		</p>
+
+		<p>
+		Depois de executar um dos dois comandos para criar o projeto(interativo ou batch)
+		o Maven irá criar um diretório com o nome do artifactId(no nosso caso, simple-project)
+		com a seguinte estrutura
+		</p>
+
+		<p>
+		src/ <br />
+		--- main/ <br />
+		--- --- java/ <br />
+		--- --- --- com/ <br />
+		--- --- --- --- andgomes/ <br />
+		--- --- --- --- --- App.java <br />
+		--- test/ <br />
+		--- --- java/ <br />
+		--- --- --- com/ <br />
+		--- --- --- --- andgomes/ <br />
+		--- --- --- --- --- AppTest.java <br />
+		pom.xml	<br />	
+		</p>
+
+		<p>
+		O diretório main/java/ é o diretório dos códigos-fonte de produção e main/test/
+		é o diretório dos códigos-fonte de teste. Note que a estrutura de diretórios
+		abaixo desses dois corresponde ao valor do package que definimos no momento da criação
+		do projeto(no nosso caso, com.andgomes).
+		</p>
+
+		<p>
+		O Maven cria os arquivos App.java e AppTest.java como exemplo de código de produção e 
+		código de teste, respectivamente.
+		</p>
+
+        <p>
+        App.java
+        </p>
+
+		<p>
+		package com.andgomes; <br /> <br />
+
+		/** <br />
+ 		* Hello world! <br />
+ 		* <br />
+ 		*/ <br />
+		public class App <br /> 
+		{ <br />
+        ----public static void main( String[] args ) <br />
+    	----{ <br />
+        --------System.out.println( "Hello World!" ); <br />
+        ----} <br />
+        } <br />
+		</p>
+    
+        <p>
+        AppTest.java
+        </p>
+
+        <p>
+        package com.andgomes; <br /> <br />
+
+        import junit.framework.Test; <br />
+        import junit.framework.TestCase; <br />
+        import junit.framework.TestSuite; <br /> <br />
+
+        /** <br />
+        * Unit test for simple App. <br />
+        */ <br />
+        public class AppTest <br /> 
+        extends TestCase <br />
+        { <br />
+        ----/** <br />
+        ----* Create the test case <br />
+        ----* <br />
+        ----* @param testName name of the test case <br />
+        ----*/ <br />
+        ----public AppTest( String testName ) <br />
+        ----{ <br />
+        --------super( testName ); <br />
+        ----} <br /> <br />
+
+        ----/** <br />
+        ----* @return the suite of tests being tested <br />
+        ----*/ <br />
+        ----public static Test suite() <br />
+        ----{ <br />
+        --------return new TestSuite( AppTest.class ); <br />
+        ----} <br /> <br />
+
+        ----/** <br />
+        ----* Rigourous Test :-) <br />
+        ----*/ <br />
+        ----public void testApp() <br />
+        ----{ <br />
+        --------assertTrue( true ); <br />
+        ----} <br />
+        }
+        </p>
 	</body>
 </html>
