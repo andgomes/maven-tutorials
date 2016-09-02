@@ -188,25 +188,54 @@
         pom.xml
         </p>
 
-	<p>
-	&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" <br />
-  	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt; <br />
-  	--&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; <br />
-  	--&lt;groupId&gt;com.andgomes&lt;/groupId&gt; <br />
-  	--&lt;artifactId&gt;my-simple-2&lt;/artifactId&gt; <br />
-  	--&lt;packaging&gt;jar&lt;/packaging&gt; <br />
-  	--&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; <br />
-  	--&lt;name&gt;my-simple-2&lt;/name&gt; <br />
-  	--&lt;url&gt;http://maven.apache.org&lt;/url&gt; <br />
-  	--&lt;dependencies&gt; <br />
-    	----&lt;dependency&gt; <br />
-      	------&lt;groupId&gt;junit&lt;/groupId&gt; <br />
-      	------&lt;artifactId&gt;junit&lt;/artifactId&gt; <br />
-      	------&lt;version&gt;3.8.1&lt;/version&gt; <br />
-      	------&lt;scope&gt;test&lt;/scope&gt; <br />
-    	----&lt;/dependency&gt; <br />
-  	--&lt;/dependencies&gt; <br />
-	&lt;/project&gt; <br />
-	</p>
+		<p>
+		&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" <br />
+	  	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt; <br />
+	  	--&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; <br />
+	  	--&lt;groupId&gt;com.andgomes&lt;/groupId&gt; <br />
+	  	--&lt;artifactId&gt;my-simple-2&lt;/artifactId&gt; <br />
+	  	--&lt;packaging&gt;jar&lt;/packaging&gt; <br />
+	  	--&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; <br />
+	  	--&lt;name&gt;my-simple-2&lt;/name&gt; <br />
+	  	--&lt;url&gt;http://maven.apache.org&lt;/url&gt; <br />
+	  	--&lt;dependencies&gt; <br />
+			----&lt;dependency&gt; <br />
+		  	------&lt;groupId&gt;junit&lt;/groupId&gt; <br />
+		  	------&lt;artifactId&gt;junit&lt;/artifactId&gt; <br />
+		  	------&lt;version&gt;3.8.1&lt;/version&gt; <br />
+		  	------&lt;scope&gt;test&lt;/scope&gt; <br />
+			----&lt;/dependency&gt; <br />
+	  	--&lt;/dependencies&gt; <br />
+		&lt;/project&gt; <br />
+		</p>
+	
+		<p>
+		Vamos para a descrição de cada componente do arquivo.
+		</p>
+	
+		<p>
+		&lt;modelVersion&gt;: versão atual do modelo de projeto utilizado pelo Maven. <br />
+		&lt;groupId&gt;: ID do grupo que desenvolve o projeto. <br />
+		&lt;artifactId&gt;: ID do projeto. <br />
+		&lt;packaging&gt;: tipo de empacotamento que o Maven irá utilizar quando o usuário quiser <br />
+		fazer a distribuição do projeto. <br />
+		&lt;version&gt;: versão atual do projeto. <br />
+		&lt;name&gt;: nome do projeto. Diferentemente do artifactId, não faz parte da identificação do projeto. <br />
+		O valor padrão é o valor do artifactId, mas você pode alterar. <br />
+		&lt;url&gt;: URL do site do projeto. O valor padrão é o site do Maven.
+		</p>
+		
+		<p>
+		A seção &lt;dependencies&gt; serve para definir todas as dependências do projeto.
+		A única dependência que vem listada como padrão é o JUnit, um framework de testes.
+		Os detalhes dessa seção serão abordados em outros posts.
+		</p>
+		
+		<p>
+		obs: até agora chamei o que é gerado pelo Maven de projeto,
+		mas de agora em diante começarei a usar a palavra artefato. A palavra projeto
+		ficará reservada para um conjunto de artefatos relacionados. O motivo são as
+		futuras postagens sobre projetos multi-módulos.
+		</p>
 	</body>
 </html>
