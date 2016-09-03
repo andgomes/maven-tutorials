@@ -17,7 +17,7 @@
 		<p>
 		obs: é necessário ter conexão com a Internet para executar corretamente
 		os comandos deste tutorial, pois o Maven faz o download dos plugins na
-		primeira vez que são necessários.
+		primeira vez que precisa deles.
 		</p>
 
 		<p>
@@ -179,7 +179,12 @@
         </p>
         
         <p>
-        O arquivo pom.xml é o principal arquivo de um projeto Maven e é nele que 
+        obs: como esses dois arquivos são apenas demonstrativos, você talvez queira excluí-los
+       	quando começar a criar seus próprios códigos.
+        </p>
+        
+        <p>
+        O arquivo POM(Project Object Model) é o principal arquivo de um projeto Maven e é nele que 
         todos os parâmetros do projeto serão descritos. A maior parte das alterações 
         do projeto serão feitas através desse arquivo. 
         </p>
@@ -210,7 +215,7 @@
 		</p>
 	
 		<p>
-		Vamos para a descrição de cada componente do arquivo.
+		Abaixo segue uma breve descrição de cada componente do arquivo POM.
 		</p>
 	
 		<p>
@@ -220,7 +225,7 @@
 		&lt;packaging&gt;: tipo de empacotamento que o Maven irá utilizar quando o usuário quiser <br />
 		fazer a distribuição do projeto. <br />
 		&lt;version&gt;: versão atual do projeto. <br />
-		&lt;name&gt;: nome do projeto. Diferentemente do artifactId, não faz parte da identificação do projeto. <br />
+		&lt;name&gt;: nome do projeto. Diferentemente do artifactId, não faz parte da identificação do projeto. 
 		O valor padrão é o valor do artifactId, mas você pode alterar. <br />
 		&lt;url&gt;: URL do site do projeto. O valor padrão é o site do Maven.
 		</p>
@@ -228,7 +233,7 @@
 		<p>
 		A seção &lt;dependencies&gt; serve para definir todas as dependências do projeto.
 		A única dependência que vem listada como padrão é o JUnit, um framework de testes.
-		Os detalhes dessa seção serão abordados em outros posts.
+		Os detalhes dessa seção serão abordados em outro post.
 		</p>
 		
 		<p>
