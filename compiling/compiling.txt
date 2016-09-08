@@ -1,4 +1,3 @@
 comando para compilar
 como mudar o version e o target
-como compilar com outro JDK
 algumas opções para passar como paramêtro 
