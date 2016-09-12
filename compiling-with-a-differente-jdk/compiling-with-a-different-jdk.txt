@@ -1,0 +1,5 @@
+apresentar o caso em que é necessário utilizar outro JDK
+mostrar o código do caso
+fazer o download do JDK necessário
+configurar o pom.xml(configurações do plugin e properties maven.compiler.*)
+executar comando de compilar
