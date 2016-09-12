@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Compilando com um JDK diferente</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+		<h1>Compilando com um JDK diferente</h1>
+		
+		<p>
+		Algumas vezes podemos precisar compilar nosso código com uma versão
+		diferente do JDK, e nem sempre queremos configurar a versão do Java na 
+		instalação do Maven. Então neste tutorial iremos ver como configurar o plugin
+		Compiler para utilizar um JDK diferente através do arquivo pom.xml.
+		Este tutorial, de certa forma, é uma extensão do anterior, que abordava
+		a compilação no Maven. O motivo de ser separado em dois basicamente foi
+		o tamanho do post.
+		</p>
+		
+		<p>
+		Assumindo que nossa versão do Java utilizada no Maven é a 1.7, se tentarmos
+		compilar a classe LambdaExpressionsDemo.java obteremos um erro informando
+		que lambda expressions só são permitidas a partir da versão 1.8.
+		</p>
+		
+		<p>
+		LambdaExpressionsDemo.java
+		</p>
+		
+		<p>
+		public class LambdaExpressionsDemo { <br />
+		----public static void main(String[] args) { <br />
+		--------MyFunc myFunc = () -> "Hello World!"; <br />	
+		----} <br />
+		}
+		</p>
+	</body>
+</html>
