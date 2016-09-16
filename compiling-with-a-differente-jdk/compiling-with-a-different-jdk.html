@@ -67,5 +67,58 @@
 		Esse passo é só para ficar mais conveniente quando referenciarmos o diretório 
 		no pom.xml.
 		</p>
+		
+		<p>
+		Agora vamos configurar o plugin Compiler no arquivo POM para que utilize o JDK que
+		baixamos.
+		</p>
+		
+		<p>
+		pom.xml
+		</p>
+		
+		<p>
+		&lt;project ...&gt; <br />
+		--... <br />
+		--&lt;build&gt;  <br />
+		----&lt;plugins&gt; <br />
+		------&lt;plugin&gt; <br />
+		--------&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; <br />
+		--------&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt; <br />
+		--------&lt;version&gt;3.5.1&lt;/version&gt; <br />
+		--------&lt;configuration&gt; <br />
+		----------&lt;source&gt;1.8&lt;/source&gt; <br />
+		----------&lt;target&gt;1.8&lt;/target&gt; <br />
+		----------&lt;fork&gt;true&lt;/fork&gt; <br />
+		----------&lt;executable&gt;/home/seuusername/jdk1.8/bin/javac&lt;/executable&gt; <br />
+		----------&lt;compilerVersion&gt;1.8&lt;/compilerVersion&gt; <br />
+		--------&lt;/configuration&gt; <br />
+		------&lt;/plugin&gt; <br />
+		----&lt;/plugins&gt; <br />
+		--&lt;/build&gt; <br />
+		--... <br />
+		&lt;/project&gt;
+		</p>
+		
+		<p>
+		Especificamos a localização do compilador que desejamos utilizar na tag &lt;executable&gt;. 
+		A tag &lt;fork&gt; deve estar configurada como true para permitir a execução do plugin Compiler 
+		como um processo separado. Também devemos configurar as versões do source e do target para a versão 1.8, 
+		por que estamos tentando compilar um código com lambda expressions.
+		</p>
+		
+		<p>
+		Depois de alterar o arquivo POM. Basta executar o comando para compilar o código.
+		</p>
+		
+		<p>
+		$ mvn compile
+		</p>
+		
+		<p>
+		<a href="https://github.com/andgomes/lambda-expressions-maven-example">
+		    Repositório do código utilizado neste tutorial.
+		</a>
+		</p>
 	</body>
 </html>
