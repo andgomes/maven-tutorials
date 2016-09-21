@@ -1,0 +1,4 @@
+explicar que o diretório de build é criado depois de algum comando para gerar alguma coisa(target)
+motivação para usar o plugin clean
+executar o comando mvn clean
+mostrar resultado
