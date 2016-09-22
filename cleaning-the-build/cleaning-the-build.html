@@ -11,8 +11,27 @@
 		<p>
 		Nos tutoriais anteriores sobre compilação, vimos que um diretório chamado
 		target era criado para armazenar o resultado do comando(naqueles casos, as 
-		classes compiladas). Quando queremos excluir esse diretório por algum motivo
-		utilizamos o plugin Clean.
-		</p>	
+		classes compiladas). É no diretório target que o Maven gera todos os artefatos 
+		resultantes do build. Quando queremos excluir esse diretório por algum motivo(quando 
+		queremos garantir que um novo build não será afetado por um build anterior, 
+		por exemplo), utilizamos o plugin Clean.
+		</p>
+
+		<p>
+		Primeiro vamos fazer o Maven criar o diretório target com o comando de compilação
+		que já vimos nos posts anteriores
+		</p>
+
+		<p>
+		$ mvn compile
+		</p>
+
+		<p>
+		Para deletar o diretório target com o plugin Clean, execute o comando
+		</p>
+
+		<p>
+		$ mvn clean
+		</p>
 	</body>
 </html>
