@@ -1,0 +1,5 @@
+motivação de utilizar o comando clean antes de um build
+explicar que terá que ficar executando o comando mvn clean todas as vezes
+dizer que há um forma melhor de fazer: através do pom
+alterar o pom
+executar um comando de compilação e mostrar a execução do clean

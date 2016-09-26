@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Limpando o Build Automaticamente com o Plugin Clean</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <h1>Limpando o Build Automaticamente com o Plugin Clean</h1>
+        
+        <p>
+        No post anterior vimos como limpar o build com o plugin Clean do Maven e
+        que há situações em que é desejável fazer isso antes de executar um novo build. 
+        O ideal é que o diretório target seja removido antes de ser criado novamente por
+        outro build para que não haja interferência dos artefatos do antigo build nos 
+        artefatos do novo build.
+        </p>
+        
+        <p>
+        Há pelo menos três formas de limpar o diretório target antes do build. 
+        </p>
+        
+        <p>
+        Executando o comando
+        </p>
+        
+        <p>
+        $ mvn clean
+        </p>
+        
+        <p>
+        antes do comando específico de build(o comando compile, por exemplo).
+        </p>
+        
+        <p>
+        Executar o comando clean no mesmo comando da instrução de build. Por exemplo
+        </p>
+        
+        <p>
+        $ mvn clean compile
+        </p>
+        
+        <p>
+        dessa forma o Maven executa os comandos na ordem esquerda-para-direita, 
+        primeiramente fazendo a limpeza do antigo build.
+        </p>
+        
+        <p>
+        Perceba que essas duas formas nos obrigam a digitar o comando clean sempre
+        que quisermos fazer um novo build, ou seja, manualmente.
+        </p>
+        
+        <p>
+        A terceira forma de fazer a limpeza do diretório target é a forma automática, 
+        que passa pela configuração do arquivo POM e é o foco desse post.
+        </p>
+    </body>
+</html>
