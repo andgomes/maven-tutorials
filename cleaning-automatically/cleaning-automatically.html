@@ -54,5 +54,34 @@
         A terceira forma de fazer a limpeza do diretório target é a forma automática, 
         que passa pela configuração do arquivo POM e é o foco desse post.
         </p>
+
+				<p>
+				Vamos criar um projeto e fazer a seguinte a seguinte alteração no arquivo pom.xml
+				</p>
+
+				<p>
+				&lt;project ...&gt; <br />
+				--... <br />
+				--&lt;build&gt; <br />
+				----&lt;plugins&gt; <br />
+				------&lt;plugin&gt; <br />
+				--------&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; <br />
+				--------&lt;artifactId&gt;maven-clean-plugin&lt;/artifactId&gt; <br />
+				--------&lt;version&gt;3.0.0&lt;/version&gt; <br />
+				--------&lt;executions&gt; <br />
+				----------&lt;execution&gt; <br />
+				------------&lt;id&gt;auto-clean&lt;/id&gt; <br />
+				------------&lt;phase&gt;initialize&lt;/phase&gt; <br />
+				------------&lt;goals&gt; <br />
+				--------------&lt;goal&gt;clean&lt;/goal&gt; <br />
+				------------&lt;/goals&gt; <br />
+				----------&lt;/execution&gt; <br />
+				--------&lt;/executions&gt; <br />
+				------&lt;/plugin&gt; <br />
+				----&lt;/plugins&gt; <br />
+				--&lt;/build&gt; <br />
+				--... <br />
+				&lt;/project&gt;
+				</p>
     </body>
 </html>
