@@ -49,7 +49,7 @@
         Perceba que essas duas formas nos obrigam a digitar o comando clean sempre
         que quisermos fazer um novo build, ou seja, manualmente.
         </p>
-        
+
         <p>
         A terceira forma de fazer a limpeza do diretório target é a forma automática, 
         que passa pela configuração do arquivo POM e é o foco desse post.
@@ -82,6 +82,34 @@
 				--&lt;/build&gt; <br />
 				--... <br />
 				&lt;/project&gt;
+				</p>
+				
+				<p>
+			  Um processo de build é separado em várias fases, e em cada fase podemos
+			  definir a execução de certos goals de plugins do Maven. No nosso caso,
+			  queremos que o goal clean do plugin Clean execute sempre no início do build,
+			  antes de executar qualquer outro goal. Para isso, definimos uma execution
+			  com o id auto-clean que irá executar o goal clean na fase de inicialização do 
+			  build(initialize).
+				</p>
+				
+				<p>
+		    Agora, toda vez que executarmos um build, o Maven irá executar o goal clean
+		    na fase de inicialização. Por exemplo, assumindo que o diretório target tenha
+		    sido criado em um build anterior, vamos executar o comando
+				</p>
+				
+				<p>
+				$ mvn compile
+				</p>
+				
+				<p>
+				No início do build o Maven irá informar que está deletando o diretório target
+				</p>
+				
+				<p>
+				[INFO] --- maven-clean-plugin:3.0.0:clean (auto-clean) @ simple-project --- <br />
+        [INFO] Deleting /home/cacomp/simple-project/target
 				</p>
     </body>
 </html>
