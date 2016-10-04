@@ -1,0 +1,5 @@
+motivação: algumas vezes um diretório adicional pode ser criado
+por um build(por scripts, por exemplo).
+mostrar que há uma forma de fazer o clean desse diretório.
+mostrar a alteração do pom.
+criar o diretório e executar o clean.
