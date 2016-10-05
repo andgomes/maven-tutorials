@@ -17,5 +17,55 @@
         O plugin Clean nos dá opção de listar quais diretórios e arquivos queremos
         excluir ao executar o goal clean. Neste post, veremos como fazer isso.
         </p>
+        
+        <p>
+        Antes de vermos como excluir um diretório adicional, vamos fazer o Maven
+        criar um quando fizermos um build.
+        </p>
+        
+        <p>
+        Vamos criar um projeto Maven e fazer a seguinte alteração no POM
+        </p>
+        
+        <p>
+        pom.xml
+        </p>
+        
+        <p>
+        &lt;project ...&gt; <br />
+        --... <br />
+        --&lt;build&gt; <br />
+        ----&lt;plugins&gt; <br />
+        ------&lt;plugin&gt; <br />
+        --------&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; <br />
+        --------&lt;artifactId&gt;maven-antrun-plugin&lt;/artifactId&gt; <br />
+        --------&lt;version&gt;1.8&lt;/version&gt; <br />
+        --------&lt;executions&gt; <br />
+        ----------&lt;execution&gt; <br />
+        ------------&lt;id&gt;create-report-folder&lt;/id&gt; <br />
+        ------------&lt;phase&gt;initialize&lt;/phase&gt; <br />
+        ------------&lt;configuration&gt; <br />
+        --------------&lt;tasks&gt; <br />
+        ----------------&lt;mkdir dir="report" /&gt; <br />
+        --------------&lt;/tasks&gt; <br />
+        ------------&lt;/configuration&gt; <br />
+        ------------&lt;goals&gt; <br />
+        --------------&lt;goal&gt;run&lt;/goal&gt; <br />
+        ------------&lt;/goals&gt; <br />
+        ----------&lt;/execution&gt; <br />
+        --------&lt;/executions&gt; <br />
+        ------&lt;/plugin&gt; <br />
+        ----&lt;/plugins&gt; <br />
+        --&lt;/build&gt; <br />
+        --... <br />
+        &lt;/project&gt;
+        </p>
+        
+        <p>
+        Configuramos o Maven para executar o goal run do plugin AntRun(um plugin
+        que permite executar tasks do Ant no Maven) na fase de inicialização. O goal
+        run executa as tasks definidas na tag &lt;tasks&gt;. No nosso caso, só
+        há um task, o mkdir, que cria um diretório que chamaremos de report.
+        </p>
     </body>
 </html>
