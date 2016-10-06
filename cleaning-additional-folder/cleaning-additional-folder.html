@@ -67,5 +67,46 @@
         run executa as tasks definidas na tag &lt;tasks&gt;. No nosso caso, só
         há um task, o mkdir, que cria um diretório que chamaremos de report.
         </p>
+        
+        <p>
+        Agora se executarmos o comando compile, o diretório report será criado ao
+        lado do diretório target, mas quando quisermos limpar os diretórios com o comando
+        clean, somente o diretório target será deletado. 
+        </p>
+        
+        <p>
+        Para que o diretório report também seja deletado pelo plugin Clean, temos que
+        adicioná-lo na lista de diretórios a serem deletados. Para isso, vamos fazer
+        a seguinte alteração no arquivo POM 
+        </p>
+        
+        <p>
+        pom.xml
+        </p>
+        
+        <p>
+        &lt;project ...&gt; <br />
+        --... <br />
+        --&lt;build&gt; <br />
+        ----&lt;plugins&gt; <br />
+        ------... <br />
+        ------&lt;plugin&gt; <br />
+        --------&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; <br />
+        --------&lt;artifactId&gt;maven-clean-plugin&lt;/artifactId&gt; <br />
+        --------&lt;version&gt;3.0.0&lt;/version&gt; <br />
+        --------&lt;configuration&gt; <br />
+        ----------&lt;filesets&gt; <br />
+        ------------&lt;fileset&gt; <br />
+        --------------&lt;directory&gt;report&lt;/directory&gt; <br />
+        ------------&lt;/fileset&gt; <br />
+        ----------&lt;/filesets&gt; <br />
+        --------&lt;/configuration&gt; <br />
+        ------&lt;/plugin&gt; <br />
+        ------... <br />
+        ----&lt;/plugins&gt; <br />
+        --&lt;/build&gt; <br />
+        --... <br />
+        &lt;/project&gt;
+        </p>
     </body>
 </html>
