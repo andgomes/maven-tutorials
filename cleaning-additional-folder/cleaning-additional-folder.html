@@ -13,8 +13,8 @@
         o diretório que é criado quando fazemos um build do projeto. A grande
         maioria dos projetos Maven só precisam de um diretório para armazenar
         todos os artefatos gerados no build, mas há a possibilidade de um projeto
-        executar um script que crie um diretório adicional, além do target.
-        O plugin Clean nos dá opção de listar quais diretórios e arquivos queremos
+        executar operações que crie diretórios adicionais, além do target.
+        O plugin Clean nos dá a opção de listar quais diretórios e arquivos queremos
         excluir ao executar o goal clean. Neste post, veremos como fazer isso.
         </p>
         
@@ -24,7 +24,7 @@
         </p>
         
         <p>
-        Vamos criar um projeto Maven e fazer a seguinte alteração no POM
+        Para isso, vamos criar um projeto Maven e fazer a seguinte alteração no POM
         </p>
         
         <p>
@@ -69,7 +69,7 @@
         </p>
         
         <p>
-        Agora se executarmos o comando compile, o diretório report será criado ao
+        Se executarmos o comando compile, o diretório report será criado ao
         lado do diretório target, mas quando quisermos limpar os diretórios com o comando
         clean, somente o diretório target será deletado. 
         </p>
@@ -107,6 +107,12 @@
         --&lt;/build&gt; <br />
         --... <br />
         &lt;/project&gt;
+        </p>
+        
+        <p>
+        Agora quando executarmos o comando clean, o diretório report também será excluído.
+        Perceba que não precisamos adicionar o diretório target nos filesets do plugin
+        Clean, por que o diretório target já é incluso por padrão.
         </p>
     </body>
 </html>
