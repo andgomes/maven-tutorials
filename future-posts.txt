@@ -1,0 +1,3 @@
+Maven 3.x e o maior rigor na utilização de plugins
+Executando Testes com classes POJO
+Executando Testes com a ferramente TestNG
