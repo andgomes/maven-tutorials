@@ -1,0 +1,4 @@
+sobre a importância dos testes unitários
+mostrar que há como fazer testes unitários no Maven
+mostrar como fazer testes unitários
+resultado se os testes não passarem
