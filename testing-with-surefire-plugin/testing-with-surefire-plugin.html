@@ -21,5 +21,53 @@
 	    frameworks JUnit e TestNG, mas neste tutorial irei utilizar exemplos com o
 	    JUnit.
 		</p>
+		
+		<p>
+		Antes de criarmos uma classe de teste, vamos modificar a versão do JUnit 
+		no arquivo POM na seção de dependências para a versão 4.12. Isso simplificará
+		nossas classes de teste, pois utilizaremos as anotações do Java.
+		</p>
+		
+		<p>
+		&lt;project ...&gt; <br />
+		--... <br />
+		--&lt;dependencies&gt; <br />
+		----... <br />
+		----&lt;dependency&gt; <br />
+		------&lt;groupId&gt;junit&lt;/groupId&gt; <br />
+		------&lt;artifactId&gt;junit&lt;/artifactId&gt; <br />
+		------&lt;version&gt;4.12&lt;/version&gt; <br />
+		------&lt;scope&gt;test&lt;/scope&gt; <br />
+		----&lt;/dependency&gt; <br />
+		----... <br />
+		--&lt;/dependencies&gt; <br />
+		--... <br />
+		&lt;/project&gt; <br />
+		</p>
+		
+		<p>
+		Agora vamos criar um teste bem simples, só para utilizarmos como exemplo.
+		Iremos chamar a classe de TestAssert e salvar o arquivo no diretório
+		/src/java/test/com/andgomes.
+		</p>
+		
+		<p>
+		package com.andgomes; <br /> <br />
+		import org.junit.Assert.assertTrue; <br /> <br />
+		public class TestAssert { <br />
+		----@Test <br />
+		----public void testAssertTrue() { <br />
+		--------assertTrue(true); <br />
+		----} <br />
+		}
+		</p>
+		
+		<p>
+		Execute o comando para executar o teste
+		</p>
+		
+		<p>
+		$ mvn test
+		</p>
 	</build>
 </html>
