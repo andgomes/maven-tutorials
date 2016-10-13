@@ -6,6 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<build>
+		<h1>Executando Testes Unitários com o Plugin Surefire</h1>
 		<p>
 		Testes são essenciais no desenvolvimento de softwares com complexidade
 		média ou alta. Possuir um ambiente onde a execução de testes seja facilitada
@@ -15,8 +16,8 @@
 		</p>
 		
 		<p>
-	    O Maven facilita a execução de testes automatizados através do plugin Surefire,
-	    e é o goal test desse plugin que usaremos para executar e gerar o relatório
+	    O Maven facilita a execução de testes automatizados através do plugin Surefire.
+	    É o goal test desse plugin que usaremos para executar e gerar o relatório
 	    dos testes. O plugin Surefire nos dá a flexibilidade de executar testes com os
 	    frameworks JUnit e TestNG, mas neste tutorial irei utilizar exemplos com o
 	    JUnit.
@@ -25,7 +26,7 @@
 		<p>
 		Antes de criarmos uma classe de teste, vamos modificar a versão do JUnit 
 		no arquivo POM na seção de dependências para a versão 4.12. Isso simplificará
-		nossas classes de teste, pois utilizaremos as anotações do Java.
+		nossas classes de teste, pois poderemos utilizar as anotações do Java.
 		</p>
 		
 		<p>
@@ -47,27 +48,68 @@
 		
 		<p>
 		Agora vamos criar um teste bem simples, só para utilizarmos como exemplo.
-		Iremos chamar a classe de TestAssert e salvar o arquivo no diretório
-		/src/java/test/com/andgomes.
+		Iremos chamar a classe de TestAssertTrue e salvar o arquivo no diretório
+		/src/test/java/com/andgomes.
 		</p>
 		
 		<p>
 		package com.andgomes; <br /> <br />
+		import org.junit.Test; <br />
 		import org.junit.Assert.assertTrue; <br /> <br />
-		public class TestAssert { <br />
+		public class TestAssertTrue { <br />
 		----@Test <br />
 		----public void testAssertTrue() { <br />
-		--------assertTrue(true); <br />
+		--------assertTrue("O parâmetro deve ser true", true); <br />
 		----} <br />
 		}
 		</p>
 		
 		<p>
-		Execute o comando para executar o teste
+		Execute o comando para rodar o teste
 		</p>
 		
 		<p>
 		$ mvn test
+		</p>
+		
+		<p>
+		O Maven fornecerá, no terminal, as informações básicas da execução dos testes.
+		Se todos os testes passarem, o build termina com sucesso, caso contrário,
+		o build falha.
+		</p>
+		
+		<p>
+		------------------------------------------------------- <br />
+ 		T E S T S <br />
+		------------------------------------------------------- <br />
+		Running com.andgomes.TestAssertTrue <br />
+		Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 sec <br /> <br />
+		Results : <br />
+		Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+		</p>
+		
+		<p>
+		Para mostrar o teste falhando vamos modificar a classe TestAssertTrue passando o
+		parâmetro false para o método assertTrue
+		</p>
+		
+		<p>
+		package com.andgomes; <br /> <br />
+		import org.junit.Test; <br />
+		import org.junit.Assert.assertTrue; <br /> <br />
+		public class TestAssertTrue { <br />
+		----@Test <br />
+		----public void testAssertTrue() { <br />
+		--------assertTrue("O parâmetro deve ser true", true); <br />
+		----} <br />
+		}
+		</p>
+		
+		<p>
+		Além de mostrar o resultado dos testes no terminal, o plugin cria dois arquivos
+		de relatório: com.andgomes.TestAssertTrue.txt e TEST-com.andgomes.TestAssertTrue.xml.
+		Esses arquivos são salvos no diretório /target/surefire-reports. O arquivo XML 
+		pode ser utilizado por ferramentas gráficas de análise.
 		</p>
 	</build>
 </html>
