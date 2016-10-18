@@ -2,10 +2,50 @@
 
 <html>
     <head>
-        <title>O Ciclo de Vida do Maven</title>
+        <title>Os Ciclos de Vida do Maven</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     <body>
-        <h1>O Ciclo de Vida do Maven</h1>
+        <h1>Os Ciclos de Vida do Maven</h1>
+        
+        <p>
+        Depois de termos visto algumas operações básicas nos posts anteriores,
+        resolvi separar esse post para falar sobre uma parte mais conceitual
+        do Maven. Iremos ver a estrutura do Maven e o passo-a-passo da execução
+        dos comandos, apresentando mais detalhadamente alguns termos técnicos, 
+        como lifecycles, phases e goals.
+        </p>
+        
+        <p>
+        A primeira coisa a saber é que há ciclos de vida(lifecycles) associados
+        aos comandos do Maven que temos executado até agora. Os lifecycles são 
+        divididos em três: default, clean e site. Esses ciclos de vida são divididos 
+        em fases(phases), e são essas fases que invocamos quando executamos aqueles 
+        comandos. Por exemplo, o comando
+        </p>
+        
+        <p>
+        $ mvn compile
+        </p>
+        
+        <p>
+        invoca a fase compile do lifecycle default. Algumas fases dos três lifecycles
+        são listadas abaixo. 
+        </p>
+        
+        <p>
+        <b>Default Lifecycle</b> <br />
+        initialize: prepara o build configurando propriedades, criando diretórios,
+        etc. <br />
+        process-resources: copia e processa os resources para o diretório das classes
+        compiladas. <br />
+        compile: compila os códigos-fonte de produção. <br />
+        test-compile: compila os códigos-fonte de teste. <br />
+        test: executa os testes e cria os relatórios. <br />
+        package: empacota os artefatos do build em um arquivo que pode ser distribuível,
+        como um JAR, por exemplo. <br />
+        install: salva no repositório local o arquivo distribuível gerado na fase package
+        no repositório local.
+        </p>
     </body>
 </html>
