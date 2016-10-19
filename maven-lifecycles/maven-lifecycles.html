@@ -20,8 +20,8 @@
         A primeira coisa a saber é que há ciclos de vida(lifecycles) associados
         aos comandos do Maven que temos executado até agora. Os lifecycles são 
         divididos em três: default, clean e site. Esses ciclos de vida são divididos 
-        em fases(phases), e são essas fases que invocamos quando executamos aqueles 
-        comandos. Por exemplo, o comando
+        em fases(phases), e são essas fases que invocamos quando queremos executar
+        alguma operação. Por exemplo, o comando
         </p>
         
         <p>
@@ -44,8 +44,19 @@
         test: executa os testes e cria os relatórios. <br />
         package: empacota os artefatos do build em um arquivo que pode ser distribuível,
         como um JAR, por exemplo. <br />
-        install: salva no repositório local o arquivo distribuível gerado na fase package
-        no repositório local.
+        install: salva no repositório local o arquivo distribuível gerado na fase package.
+        </p>
+        
+        <p>
+        <b>Clean Lifecycle</b> <br />
+        pre-clean: executa ações necessárias antes da limpeza do target. <br />
+        clean: remove o diretório target gerado no build anterior.
+        </p>
+        
+        <p>
+        <b>Site Lifecycle</b> <br />
+        site: cria as páginas web do projeto. <br />
+        site-deploy: faz o deploy(implantação) das páginas web geradas na fase site. <br />
         </p>
     </body>
 </html>

@@ -4,3 +4,4 @@ cada fase executa goals de plugins
 as fases são executadas em ordem
 exemplos de fase e os goals que ela executa
 exemplo prático: invocando a fase package
+porque não é aconselhável chamar diretamente o goal do plugin
