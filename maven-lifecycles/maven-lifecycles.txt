@@ -5,3 +5,4 @@ as fases são executadas em ordem
 exemplos de fase e os goals que ela executa
 exemplo prático: invocando a fase package
 porque não é aconselhável chamar diretamente o goal do plugin
+links de referência dos lifecycles e dos plugins associados pelo tipo de packaging

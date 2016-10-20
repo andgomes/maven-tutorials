@@ -66,7 +66,33 @@
         </p>
         
         <p>
+        O principal objetivo da separação do build em fases é garantir a execução
+        de passos anteriores necessários à fase que o usuário quer executar. Quem
+        realmente executa as operações são os plugins. Cada tipo de packaging associa
+        certos plugins às fases do lifecycle. Por exemplo, se o tipo do packaging for jar,
+        quando invocamos a fase compile, o Maven executa o goal compile do plugin
+        Compiler para compilar o código-fonte. Da mesma forma, quando invocamos a
+        fase clean é o goal clean do plugin Clean que remove o diretório target.
+        </p>
         
+        <p>
+        Ao invés de invocarmos uma fase e essa fase executar um goal, podemos
+        executar o goal diretamente, basta informar o nome do plugin e nome do
+        goal que queremos executar. Por exemplo, para executar o goal compile
+        do plugin Compiler, podemos executar o comando
+        </p>
+        
+        <p>
+        $ mvn compiler:compile
+        </p>
+        
+        <p>
+        É importante notar que, ao executar o goal diretamente, o Maven não invocou a fase
+        process-resources, que é uma fase anterior à fase compile. Isso não aconteceu
+        porque não invocamos uma fase, e nesse caso o lifecycle não é referenciado.
+        Portanto, quando queremos que todas as operações-padrão do lifecycle sejam
+        executadas antes de uma operação específica, devemos invocar a fase ao invés
+        de invocar o goal diretamente.
         </p>
     </body>
 </html>
