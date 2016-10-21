@@ -12,8 +12,7 @@
         Depois de termos visto algumas operações básicas nos posts anteriores,
         resolvi separar esse post para falar sobre uma parte mais conceitual
         do Maven. Iremos ver a estrutura do Maven e o passo-a-passo da execução
-        dos comandos, apresentando mais detalhadamente alguns termos técnicos, 
-        como lifecycles, phases e goals.
+        do build, apresentando mais detalhadamente o que são lifecycles, fases e goals.
         </p>
         
         <p>
@@ -49,14 +48,20 @@
         
         <p>
         <b>Clean Lifecycle</b> <br />
-        pre-clean: executa ações necessárias antes da limpeza do target. <br />
-        clean: remove o diretório target gerado no build anterior.
+        pre-clean: executa ações necessárias antes da limpeza do build anterior. <br />
+        clean: remove os artefatos gerados no build anterior.
         </p>
         
         <p>
         <b>Site Lifecycle</b> <br />
         site: cria as páginas web do projeto. <br />
-        site-deploy: faz o deploy(implantação) das páginas web geradas na fase site. <br />
+        site-deploy: faz o deploy(implantação) das páginas web geradas na fase site 
+        em um servidor. <br />
+        </p>
+        
+        <p>
+        A lista completa das fases dos lifecycles pode se encontrada no
+        <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference" target="_blank">site oficial da Apache Foundation</a>.
         </p>
         
         <p>
@@ -72,13 +77,16 @@
         certos plugins às fases do lifecycle. Por exemplo, se o tipo do packaging for jar,
         quando invocamos a fase compile, o Maven executa o goal compile do plugin
         Compiler para compilar o código-fonte. Da mesma forma, quando invocamos a
-        fase clean é o goal clean do plugin Clean que remove o diretório target.
+        fase clean, é o goal clean do plugin Clean que faz a limpeza do build anterior.
+        As ligações entre plugins e fases para cada tipo de packaging podem ser
+        encontradas no 
+        <a href="https://maven.apache.org/ref/3.3.9/maven-core/default-bindings.html" target="_blank">site oficial da Apache Foundation</a>.
         </p>
         
         <p>
         Ao invés de invocarmos uma fase e essa fase executar um goal, podemos
-        executar o goal diretamente, basta informar o nome do plugin e nome do
-        goal que queremos executar. Por exemplo, para executar o goal compile
+        executar um goal diretamente. Para isso, basta informar o nome do plugin e
+        nome do goal que queremos executar. Por exemplo, para executar o goal compile
         do plugin Compiler, podemos executar o comando
         </p>
         
@@ -88,11 +96,11 @@
         
         <p>
         É importante notar que, ao executar o goal diretamente, o Maven não invocou a fase
-        process-resources, que é uma fase anterior à fase compile. Isso não aconteceu
-        porque não invocamos uma fase, e nesse caso o lifecycle não é referenciado.
+        process-resources, que é uma fase anterior à fase compile no lifecycle default. 
+        Isso aconteceu porque não invocamos uma fase, e nesse caso o lifecycle não é referenciado.
         Portanto, quando queremos que todas as operações-padrão do lifecycle sejam
         executadas antes de uma operação específica, devemos invocar a fase ao invés
-        de invocar o goal diretamente.
+        de invocar diretamente o goal do plugin.
         </p>
     </body>
 </html>
