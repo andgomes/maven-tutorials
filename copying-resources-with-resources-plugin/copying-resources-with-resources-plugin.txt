@@ -1,0 +1,4 @@
+motivação para utilizar arquivos de recurso
+onde os arquivos de recurso são localizados no Maven
+mostrar o comando para copiar os recursos
+onde os arquivos vão parar
