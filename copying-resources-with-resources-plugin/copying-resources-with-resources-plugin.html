@@ -50,5 +50,63 @@
         --------------------AppTest.java <br />
         pom.xml
         </p>
+        
+        <p>
+        Agora vamos invocar a fase process-resources com o comando
+        </p>
+        
+        <p>
+        $ mvn process-resources
+        </p>
+        
+        <p>
+        Ao invocar a fase process-resources, o Maven utiliza o goal resources do
+        plugin Resources para copiar os arquivos de recurso. O arquivo
+        resource.txt é copiado para o diretório target/classes/, conforme a
+        estrutura abaixo
+        </p>
+        
+        <p>
+        src/ <br />
+        ----main/ <br />
+        --------java/ <br />
+        ------------com/ <br />
+        ----------------andgomes/ <br />
+        --------------------App.java <br />
+        --------resources/ <br />
+        ------------resource.txt <br />
+        ----test/ <br />
+        --------java/ <br />
+        ------------com/ <br />
+        ----------------andgomes/ <br />
+        --------------------AppTest.java <br />
+        target/ <br />
+        ----classes/ <br />
+        --------resource.txt <br />
+        pom.xml
+        </p>
+        
+        <p>
+        Da mesma forma, podemos copiar os arquivos de recurso das classes de
+        teste com o comando
+        </p>
+        
+        <p>
+        $ mvn process-test-resources
+        </p>
+        
+        <p>
+        O Maven utiliza o goal testResources do plugin Resources para copiar os
+        arquivos de recurso para o diretório target/test-classes/.
+        </p>
+        
+        <p>
+        Perceba que não é tão útil ter somente os arquivos de recurso no
+        diretório das classes. Ao invés de invocar a fase process-resources, o
+        mais comum é invocar a fase compile, por que além de compilar o
+        código-fonte, lembre-se que a fase process-resources já é invocada
+        implicitamente pelo Maven no lifecycle default, ou seja, somente
+        invocando a fase compile, copiamos os recursos e compilamos o código.
+        </p>
     </body>
 </html>
