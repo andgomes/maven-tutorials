@@ -16,10 +16,9 @@
         </p>
         
         <p>
-        Em muitos projetos esses arquivos são salvos em um diretório chamado
-        res. Na estrutura de projetos do Maven, no entanto, há dois diretórios
-        nos quais podemos armazenar os recursos, dependendo se são recursos dos
-        programas de produção ou dos programas de teste.
+        Na estrutura de projetos do Maven, há dois diretórios nos quais podemos
+        armazenar os recursos, dependendo se são recursos dos programas de
+        produção ou dos programas de teste.
         </p>
         
         <p>
@@ -31,7 +30,7 @@
         <p>
         Vamos criar um projeto e salvar um arquivo de recurso chamado
         resource.txt no diretório src/main/resources. A estrutura do projeto
-        será como a estrutura abaixo.
+        ficará como a estrutura abaixo.
         </p>
         
         <p>
@@ -105,8 +104,8 @@
         diretório das classes. Ao invés de invocar a fase process-resources, o
         mais comum é invocar a fase compile, por que além de compilar o
         código-fonte, lembre-se que a fase process-resources já é invocada
-        implicitamente pelo Maven no lifecycle default, ou seja, somente
-        invocando a fase compile, copiamos os recursos e compilamos o código.
+        implicitamente pelo Maven no lifecycle default, ou seja, copiamos os
+        recursos e compilamos o código com um único comando.
         </p>
     </body>
 </html>
