@@ -107,5 +107,47 @@
         implicitamente pelo Maven no lifecycle default, ou seja, copiamos os
         recursos e compilamos o código com um único comando.
         </p>
+        
+        <p>
+        Como exemplo, vamos criar o arquivo resource.txt e a classe que utiliza
+        esse arquivo
+        </p>
+        
+        <p>
+        resource.txt
+        </p>
+        
+        <p>
+        Hello Resources!
+        </p>
+        
+        <p>
+        <a href="https://gist.github.com/andgomes/cc182a5f4d945e688358d121c7e9863d#file-resourcesdemo-java" target="_blank">
+        ResourcesDemo.java
+        </a>
+        </p>
+        
+        <p>
+        Vamos invocar a fase compile e em seguida executar a classe
+        ResourceDemo com os comandos
+        </p>
+        
+        <p>
+        $ mvn compile
+        </p>
+        
+        </p>
+        $ mvn exec:java -Dexec.mainClass="com.andgomes.ResourcesDemo"
+        </p>
+        
+        <p>
+        O Maven imprimirá na saída o seguinte resultado
+        </p>
+        
+        <p>
+        [INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ simple-project --- <br />
+        Hello Resources! <br />
+        [INFO] ------------------------------------------------------------------------
+        </p>
     </body>
 </html>
