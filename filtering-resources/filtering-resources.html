@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Filtrando Arquivos de Recurso</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <h1>Filtrando Arquivos de Recurso</h1>
+        
+        <p>
+        No post anterior, vimos como copiar arquivos de recurso para o diretório
+        de classes. Porém, da forma como vimos, o arquivo tem que ser estático,
+        ou seja, não há a possibilidade de o conteúdo do arquivo ser alterado
+        para atender às necessidades específicas de cada ambiente. Por exemplo,
+        em determinado projeto, poderíamos precisar salvar o caminho do banco de
+        dados da aplicação em um arquivo de recurso separado. Esse caminho não
+        necessariamente será o mesmo em todos os computadores dos programadores.
+        </p>
+        
+        <p>
+        O problema da localização do banco de dados pode ser resolvido pelo
+        menos de duas formas. A primeira forma de resolver é obrigando cada
+        programador a alterar o arquivo manualmente. Se o projeto for mantido
+        em um ambiente de versionamento, toda vez que houver uma sincronização
+        o arquivo terá que ser alterado novamente. A segunda forma é utilizando
+        a filtração de recursos. Com a filtração de recursos, podemos utilizar
+        placeholders(campos variáveis) para os dados que dependem do ambiente de
+        execução.
+        </p>
+    </body>
+</html>
