@@ -1,4 +1,4 @@
 motivação de usar filtração
+exemplo de filtração
 sintaxe para filtração
 tipos de propriedades(env, java, pom, project, etc)
-exemplo de filtração
