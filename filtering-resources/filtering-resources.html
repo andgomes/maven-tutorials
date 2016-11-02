@@ -50,5 +50,29 @@
         convenção, o caractere ponto(.) é utilizado como separador do nome do
         campo.
         </p>
+        
+        <p>
+		Agora precisamos de um arquivo onde o nome do programador fique
+		armazenado e esteja disponível para que o Maven substitua o campo
+		programmer.name quando copiar o arquivo de recurso. Poderíamos escolher
+		o arquivo POM, porém o problema de cada programador ter que alterar
+		o arquivo a cada sincronização não seria resolvido, porque o POM de um
+		projeto é compartilhado entre todos os programadores.
+        </p>
+        
+        <p>
+        Vamos criar um arquivo chamado settings.xml no diretório .m2, que é o
+        repositório local onde o Maven armazena os plugins que são baixados.
+        O diretório .m2 é um hidden directory(para vê-lo precisamos digitar
+        ctrl+h) localizado em /home/seuusername.
+        </p>
+        
+        <p>
+        O arquivo settings.xml terá o seguinte conteúdo.
+        </p>
+        
+        <p>
+        settings.xml
+        </p>
     </body>
 </html>
