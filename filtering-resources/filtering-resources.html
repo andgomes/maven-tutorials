@@ -37,11 +37,11 @@
         </p>
         
         <p>
-        programmer-resource.txt
+        src/main/resources/programmer-resource.txt
         </p>
         
         <p>
-        Programmer name: ${programmer.name}
+        Programmer name: ${programmer.name} <br />
         Operating system: ${os.name}-${os.version}
         </p>
         
@@ -64,7 +64,9 @@
         Vamos criar um arquivo chamado settings.xml no diretório .m2, que é o
         repositório local onde o Maven armazena os plugins que são baixados.
         O diretório .m2 é um hidden directory(para vê-lo precisamos digitar
-        ctrl+h) localizado em /home/seuusername.
+        ctrl+h) localizado em /home/seuusername. Como cada programador terá um
+        arquivo settings.xml separado, esse arquivo só precisa ser alterado uma
+        vez.
         </p>
         
         <p>
@@ -74,5 +76,78 @@
         <p>
         settings.xml
         </p>
+        
+        <p>
+        &lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" <br />
+		----------xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" <br />
+		----------xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 <br />
+		----------http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt; <br /> <br />
+		--&lt;profiles&gt; <br />
+		----&lt;profile&gt; <br />
+		------&lt;id&gt;programmer&lt;/id&gt; <br />
+		------&lt;activation&gt; <br />
+		--------&lt;activeByDefault&gt;true&lt;/activeByDefault&gt; <br />
+		------&lt;/activation&gt; <br />
+		------&lt;properties&gt; <br />
+		--------&lt;programmer.name&gt;Anderson Gomes&lt;/programmer.name&gt; <br />
+		------&lt;/properties&gt; <br />
+		----&lt;/profile&gt; <br />
+		--&lt;/profiles&gt; <br /> <br />
+		&lt;/settings&gt;
+        </p>
+        
+        <p>
+        Criamos um perfil(profile) com o id programmer e definimos esse perfil
+        como ativo por padrão para que a propriedade programmer.name seja
+        configurada em toda operação de build. Se o perfil não estiver ativo
+        durante o build, a propriedade não será configurada e o Maven não
+        subtistuirá o campo correspondente no arquivo de recurso. Note que o
+        nome da propriedade é o mesmo nome do placeholder no arquivo
+        programmer.resource.txt.
+        </p>
+        
+        <p>
+        Agora vamos executar o comando para compilar o código-fonte. Lembre-se
+        que, de acordo com o lifecycle default, o Maven invoca a fase
+        process-resources antes da fase compile.
+        </p>
+        
+        <p>
+        $ mvn compile
+        </p>
+        
+        <p>
+        O arquivo programmer-resource.txt será copiado para o diretório
+        target/classes/ com os campos substituídos pelos respectivos valores.
+        </p>
+        
+        <p>
+        target/classes/programmer-resource.txt
+        </p>
+        
+        <p>
+       	Programmer name: Anderson Gomes <br />
+       	Operating system: Linux-4.4.0-45-generic 
+        </p>
+        
+        <p>
+        Talvez você tenha notado que nós precisamos definir o valor para a
+        propriedade programmer.name mas não precisamos para os campos os.name e
+        os.version. O motivo disso é que algumas propriedades já são
+        pré-definidas pelo Maven. Três variáveis são disponibilizadas para
+        acessar essas propriedades.
+        </p>
+   		
+   		<p>
+   		env
+   		</p>
+   		
+   		<p>
+   		project
+   		</p>
+   		
+   		<p>
+   		settings
+   		</p>
     </body>
 </html>
