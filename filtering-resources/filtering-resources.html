@@ -13,26 +13,25 @@
         de classes. Porém, da forma como vimos, o arquivo tem que ser estático,
         ou seja, não há a possibilidade de o conteúdo do arquivo ser alterado
         para atender às necessidades específicas de cada ambiente. Por exemplo,
-        em determinado projeto, poderíamos precisar salvar o caminho do banco de
+        em determinado projeto, poderíamos ter que salvar o caminho do banco de
         dados da aplicação em um arquivo de recurso separado. Esse caminho não
-        necessariamente será o mesmo em todos os computadores dos programadores.
+        necessariamente será o mesmo em todos os ambientes de execução.
         </p>
         
         <p>
         O problema da localização do banco de dados pode ser resolvido pelo
-        menos de duas formas. A primeira forma de resolver é obrigando cada
+        menos de duas maneiras diferentes. A primeira maneira de resolver é obrigando cada
         programador a alterar o arquivo manualmente. Se o projeto for mantido
         em um ambiente de versionamento, toda vez que houver uma sincronização
-        o arquivo terá que ser alterado novamente. A segunda forma é utilizando
+        o arquivo terá que ser alterado. A segunda maneira é utilizando
         a filtração de recursos. Com a filtração de recursos, podemos utilizar
-        placeholders(campos variáveis) para os dados que dependem do ambiente de
+        placeholders para os dados que dependem do ambiente de
         execução.
         </p>
         
         <p>
-        Como exemplo de uso da filtração de recursos, vamos criar um arquivo de
-        que contém o nome do programador que está desenvolvendo em determinado
-        computador e o nome do sistema operacional que ele está utilizando. O
+        Como exemplo de uso da filtração de recursos, vamos criar um arquivo que
+        contém o nome do programador e o sistema operacional que ele está utilizando. O
         arquivo terá o seguinte conteúdo:
         </p>
         
@@ -47,8 +46,7 @@
         
         <p>
         A sintaxe de um placeholder segue a estrutura ${nome.do.campo}. Por
-        convenção, o caractere ponto(.) é utilizado como separador do nome do
-        campo.
+        convenção, o caractere ponto(.) é utilizado como separador.
         </p>
         
         <p>
@@ -102,12 +100,34 @@
         
         <p>
         Criamos um perfil(profile) com o id programmer e definimos esse perfil
-        como ativo por padrão para que a propriedade programmer.name seja
-        configurada em toda operação de build. Se o perfil não estiver ativo
+        como ativo na seção activeProfiles para que a propriedade programmer.name
+        seja configurada em toda operação de build. Se o perfil não estiver ativo
         durante o build, a propriedade não será configurada e o Maven não
         subtistuirá o campo correspondente no arquivo de recurso. Note que o
         nome da propriedade é o mesmo nome do placeholder no arquivo
         programmer.resource.txt.
+        </p>
+        
+        <p>
+        Já temos a propriedade definida, agora só precisamos ativar a filtragem
+        de recursos no arquivo POM.
+        </p>
+        
+        <p>
+        &lt;project ...&gt; <br /> 
+        --... <br />
+        --&lt;build&gt; <br />
+        ----... <br />
+        ----&lt;resources&gt; <br />
+        ------&lt;resource&gt; <br />
+        --------&lt;directory&gt;src/main/resources&lt;/directory&gt; <br />
+        --------&lt;filtering&gt;true&lt;/filtering&gt; <br />
+        ------&lt;/resource&gt; <br />
+        ----&lt;/resources&gt; <br />
+        ----... <br />
+        --&lt;/build&gt; <br />
+        --... <br />
+        &lt;/project&gt;
         </p>
         
         <p>
@@ -154,7 +174,7 @@
    		
    		<p>
    		settings.*: permite acessar propriedades do arquivo .m2/settings.xml.
-   		Exemplos: settings.
+   		Exemplos: settings.offline e settings.localRepository.
    		</p>
    		
    		<p>
