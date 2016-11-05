@@ -20,19 +20,19 @@
         
         <p>
         O problema da localização do banco de dados pode ser resolvido pelo
-        menos de duas maneiras diferentes. A primeira maneira de resolver é obrigando cada
-        programador a alterar o arquivo manualmente. Se o projeto for mantido
-        em um ambiente de versionamento, toda vez que houver uma sincronização
-        o arquivo terá que ser alterado. A segunda maneira é utilizando
-        a filtração de recursos. Com a filtração de recursos, podemos utilizar
-        placeholders para os dados que dependem do ambiente de
+        menos de duas maneiras diferentes. A primeira maneira de resolver é
+        obrigando cada programador a alterar o arquivo manualmente. Se o projeto
+        for mantido em um ambiente de versionamento, toda vez que houver uma
+        sincronização o arquivo terá que ser alterado. A segunda maneira é
+        utilizando a filtração de recursos. Com a filtração de recursos, podemos
+        utilizar placeholders para os dados que dependem do ambiente de
         execução.
         </p>
         
         <p>
         Como exemplo de uso da filtração de recursos, vamos criar um arquivo que
-        contém o nome do programador e o sistema operacional que ele está utilizando. O
-        arquivo terá o seguinte conteúdo:
+        contém o nome do programador e o sistema operacional que ele está
+        utilizando. O arquivo terá o seguinte conteúdo:
         </p>
         
         <p>
@@ -52,7 +52,7 @@
         <p>
 		Agora precisamos de um arquivo onde o nome do programador fique
 		armazenado e esteja disponível para que o Maven substitua o campo
-		programmer.name quando copiar o arquivo de recurso. Poderíamos escolher
+		programmer.name quando copiar o recurso. Poderíamos escolher
 		o arquivo POM, porém o problema de cada programador ter que alterar
 		o arquivo a cada sincronização não seria resolvido, porque o POM de um
 		projeto é compartilhado entre todos os programadores.
@@ -65,10 +65,6 @@
         ctrl+h) localizado em /home/seuusername. Como cada programador terá um
         arquivo settings.xml separado, esse arquivo só precisa ser alterado uma
         vez.
-        </p>
-        
-        <p>
-        O arquivo settings.xml terá o seguinte conteúdo.
         </p>
         
         <p>
@@ -95,22 +91,18 @@
         </p>
         
         <p>
-        --------mostrar referência do arquivo settings--------
-        </p>
-        
-        <p>
         Criamos um perfil(profile) com o id programmer e definimos esse perfil
-        como ativo na seção activeProfiles para que a propriedade programmer.name
-        seja configurada em toda operação de build. Se o perfil não estiver ativo
-        durante o build, a propriedade não será configurada e o Maven não
-        subtistuirá o campo correspondente no arquivo de recurso. Note que o
-        nome da propriedade é o mesmo nome do placeholder no arquivo
+        como ativo na seção activeProfiles para que a propriedade
+        programmer.name seja configurada em toda operação de build. Se o perfil
+        não estiver ativo durante o build, a propriedade não será configurada e
+        o Maven não subtistuirá o campo correspondente no arquivo de recurso.
+        Note que o nome da propriedade é igual ao nome do placeholder no arquivo
         programmer.resource.txt.
         </p>
         
         <p>
-        Já temos a propriedade definida, agora só precisamos ativar a filtragem
-        de recursos no arquivo POM.
+        Já temos a propriedade configurada, agora só precisamos ativar a
+        filtração de recursos no arquivo POM.
         </p>
         
         <p>
@@ -142,7 +134,7 @@
         
         <p>
         O arquivo programmer-resource.txt será copiado para o diretório
-        target/classes/ com os campos substituídos pelos respectivos valores.
+        target/classes/ com os campos substituídos por seus respectivos valores.
         </p>
         
         <p>
@@ -155,11 +147,11 @@
         </p>
         
         <p>
-        Talvez você tenha notado que nós precisamos definir o valor para a
+        Perceba que nós precisamos definir o valor para a
         propriedade programmer.name mas não precisamos para os campos os.name e
         os.version. O motivo disso é que algumas propriedades já são
-        pré-definidas pelo Maven. Três variáveis são disponibilizadas para
-        acessar essas propriedades.
+        pré-definidas e acessíveis pelo Maven. Três variáveis são
+        disponibilizadas para acessar essas propriedades.
         </p>
    		
    		<p>
@@ -173,15 +165,15 @@
    		</p>
    		
    		<p>
-   		settings.*: permite acessar propriedades do arquivo .m2/settings.xml.
+   		settings.*: permite acessar as propriedades do arquivo .m2/settings.xml.
    		Exemplos: settings.offline e settings.localRepository.
    		</p>
    		
    		<p>
-   		Além dessas três variáveis, todas as propriedades que podem ser obtidas
-   		pelo método getProperty() da classe java.lang.System também podem ser
-   		acessadas. No arquivo programmer-resource.txt utilizamos duas delas:
-   		os.name e os.version.
+   		Além dessas, todas as propriedades que podem ser obtidas pelo método
+   		getProperty() da classe java.lang.System também estão disponíveis. No
+   		arquivo programmer-resource.txt utilizamos duas delas: os.name e
+   		os.version.
    		</p>
     </body>
 </html>
