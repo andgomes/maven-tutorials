@@ -1,0 +1,4 @@
+para onde vão os plugins
+porque querer mudar
+como mudar
+executando comando e verificando se foram para o local correto
