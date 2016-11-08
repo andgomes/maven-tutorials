@@ -16,8 +16,34 @@
 		
 		<p>
 		Como o diretório .m2 é um diretório oculto, quando queremos ver seu
-		conteúdo precisamos digitar as teclas ctrl+h. Então para facilitar o
-		acesso, podemos querer utilizar outro diretório como repositório local.
+		conteúdo precisamos digitar as teclas ctrl+h. Para facilitar o acesso,
+		podemos querer utilizar outro diretório como repositório local.
+		</p>
+		
+		<p>
+		Vamos alterar o arquivo /home/username/.m2/settings.xml para indicar o
+		caminho do diretório que será utilizado. Caso o arquivo não exista, crie
+		um.
+		</p>
+		
+		<p>
+		settings.xml
+		</p>
+		
+		<p>
+		&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" <br />
+		----------xmlns.xsi="http://www.w3.org/2001/XMLSchema-instance" <br />
+		----------xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 <br />
+		----------http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt; <br />
+		--... <br />
+		--&lt;localRepository&gt;/home/username/maven-repo&lt;/localRepository&gt; <br />
+		--... <br />
+		&lt;/settings&gt;
+		</p>
+		
+		<p>
+		Agora quando executarmos um comando, o Maven irá baixar os plugins para
+		o diretório /home/username/maven-repo.
 		</p>
 	</body>
 </html>
