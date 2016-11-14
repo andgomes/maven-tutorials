@@ -2,11 +2,11 @@
 
 <html>
     <head>
-        <title>Configurando o Source Encoding</title>
+        <title>Configurando o Source Encoding de um Projeto Maven</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     <body>
-        <h1>Configurando o Source Encoding</h1>
+        <h1>Configurando o Source Encoding de um Projeto Maven</h1>
         
         <p>
         Nos tutoriais anteriores, quando executamos alguma operação de build,
@@ -25,7 +25,7 @@
         Essas mensagens são geradas quando o character encoding dos arquivos não
         foi configurado no projeto. O Maven gera o warning avisando que o
         encoding utilizado no processamento dos arquivos é o que está disponível
-        no computador atual, ou seja, o resultado do build pode ser diferente
+        no ambiente de execução atual, ou seja, o resultado do build pode ser diferente
         em outros ambientes de execução com  character encodings diferentes.
         </p>
         
@@ -38,7 +38,7 @@
         
         <p>
         Vamos configurar o character encoding de um projeto chamado simple-project.
-        No arquivo POM do projeto, faça a seguinte alteração.
+        No arquivo POM do projeto, faça a seguinte alteração:
         </p>
         
         <p>
@@ -53,8 +53,9 @@
         
         <p>
         Agora, toda vez que um build for executado, o Maven irá utilizar o
-        encoding UTF-8 para os arquivos. Se invocarmos a fase compile, o Maven
-        informará qual character encoding foi utilizado no build.
+        encoding UTF-8 para processar os arquivos. Se invocarmos a fase compile, o Maven
+        informará qual character encoding foi utilizado no processamente dos
+        arquivos.
         </p>
         
         <p>
