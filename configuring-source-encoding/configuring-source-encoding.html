@@ -1,0 +1,70 @@
+<!DOCTYPE>
+
+<html>
+    <head>
+        <title>Configurando o Source Encoding</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <h1>Configurando o Source Encoding</h1>
+        
+        <p>
+        Nos tutoriais anteriores, quando executamos alguma operação de build,
+        talvez você tenha notado algumas mensagens de warning que o Maven gera quando
+        está processando os arquivos de código-fonte ou os arquivos de resource.
+        </p>
+        
+        <p>
+        [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ simple-project --- <br />
+        [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent! <br /> <br />
+        [INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ simple-project --- <br />
+        [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+        </p>
+        
+        <p>
+        Essas mensagens são geradas quando o character encoding dos arquivos não
+        foi configurado no projeto. O Maven gera o warning avisando que o
+        encoding utilizado no processamento dos arquivos é o que está disponível
+        no computador atual, ou seja, o resultado do build pode ser diferente
+        em outros ambientes de execução com  character encodings diferentes.
+        </p>
+        
+        <p>
+        É recomendável sempre configurar o encoding de um projeto, pois o Maven
+        irá utilizar aquele encoding em todos os builds, independentemente da
+        plataforma que está sendo utilizada, e o resultado do processamento dos
+        arquivos será o mesmo.
+        </p>
+        
+        <p>
+        Vamos configurar o character encoding de um projeto chamado simple-project.
+        No arquivo POM do projeto, faça a seguinte alteração.
+        </p>
+        
+        <p>
+        &lt;project ...&gt; <br />
+        --... <br />
+        --&lt;properties&gt; <br />
+        ----&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt; <br />
+        --&lt;/properties&gt; <br />
+        --... <br />
+        &lt;/project&gt;
+        </p>
+        
+        <p>
+        Agora, toda vez que um build for executado, o Maven irá utilizar o
+        encoding UTF-8 para os arquivos. Se invocarmos a fase compile, o Maven
+        informará qual character encoding foi utilizado no build.
+        </p>
+        
+        <p>
+        [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ simple-project --- <br />
+        [INFO] Using 'UTF-8' encoding to copy filtered resources.
+        </p>
+        
+        <p>
+        Vários outros character encodings podem ser utilizados. Exemplos: ASCII,
+        ISO-8859-1, WINDOWS-1252, CP437.
+        </p>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+mostrar a mensagem de warning
+porque a mensagem aparece
+porque querer configurar o source encoding
+como configurar
+mostrar mensagem de source encoding durante o build
