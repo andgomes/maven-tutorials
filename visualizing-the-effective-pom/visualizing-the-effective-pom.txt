@@ -1,0 +1,6 @@
+algumas vezes podemos querer saber o motivo de algum erro de build
+podemos recorrer ao pom efetivo de um projeto
+o plugin Help
+o goal help:effective-pom
+mostrar o resultado
+o que é e onde fica localizado o Super POM
