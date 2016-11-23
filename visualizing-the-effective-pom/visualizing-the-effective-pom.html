@@ -7,5 +7,35 @@
     </head>
     <body>
         <h1>Visualizando o Effective POM de um Projeto</h1>
+        
+        <p>
+        Sabemos que todo projeto Maven possui um arquivo POM que é utilizado
+        para armazenar todas as configurações do projeto. Porém, somente com as
+        informações do arquivo POM de um projeto o Maven não tem como saber
+        outras informações importantes, como localização dos códigos-fonte, onde
+        salvar as classes compiladas.
+        </p>
+        
+        <p>
+        Para acessar essas informações, o Maven utiliza um arquivo chamado
+        pom-4.0.0.xml, conhecido como Super POM, que fica localizado em
+        M3_HOME/lib/, dentro do arquivo JAR maven-model-builder.3.3.9.jar.
+        </p>
+        
+        <p>
+        Quando surgem erros no build que são difíceis de encontrar, podemos
+        recorrer ao Effective POM, que é a junção do Super POM com o arquivo
+        POM específico do projeto. Para visualizar o Effective POM, vamos
+        executar o goal effective-pom do plugin Help.
+        </p>
+        
+        <p>
+        $ mvn help:effective-pom
+        </p>
+        
+        </p>
+        O Maven irá exibir, no terminal, o resultado da junção do Super POM com
+        o POM do projeto.
+        </p>
     </body>
 </html>
