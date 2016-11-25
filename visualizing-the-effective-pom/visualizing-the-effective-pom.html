@@ -9,22 +9,31 @@
         <h1>Visualizando o Effective POM de um Projeto</h1>
         
         <p>
-        Sabemos que todo projeto Maven possui um arquivo POM que é utilizado
-        para armazenar todas as configurações do projeto. Porém, somente com as
-        informações do arquivo POM de um projeto o Maven não tem como saber
-        outras informações importantes, como localização dos códigos-fonte, onde
-        salvar as classes compiladas.
+        Todo projeto Maven possui um arquivo POM que contém as informações e as
+        configurações que serão utilizadas durante o build. Porém, somente com as
+        informações do arquivo POM de um projeto, o Maven não tem acesso à
+        outras informações importantes, como a localização dos códigos-fonte, onde
+        salvar as classes compiladas, etc.
         </p>
         
         <p>
         Para acessar essas informações, o Maven utiliza um arquivo chamado
-        pom-4.0.0.xml, conhecido como Super POM, que fica localizado em
-        M3_HOME/lib/, dentro do arquivo JAR maven-model-builder.3.3.9.jar.
+        pom-4.0.0.xml, conhecido como Super POM, que fica localizado no diretório
+        M3_HOME/lib/(M3_HOME é o diretório de instalação do Maven), 
+        dentro do arquivo JAR maven-model-builder.3.3.9.jar.
+        </p>
+        
+        <p>
+        Super POM
+        </p>
+        
+        <p>
+        ---Super POM code here---
         </p>
         
         <p>
         Quando surgem erros no build que são difíceis de encontrar, podemos
-        recorrer ao Effective POM, que é a junção do Super POM com o arquivo
+        recorrer ao Effective POM, que é o resultado da junção do Super POM com o arquivo
         POM específico do projeto. Para visualizar o Effective POM, vamos
         executar o goal effective-pom do plugin Help.
         </p>
@@ -34,8 +43,15 @@
         </p>
         
         </p>
-        O Maven irá exibir, no terminal, o resultado da junção do Super POM com
-        o POM do projeto.
+        O Maven irá exibir o resultado no terminal.
         </p>
+        
+        <p>
+        Effective POM
+        </p>
+        
+        <p>
+        ---Effective POM code here---
+        </>
     </body>
 </html>
