@@ -1,0 +1,3 @@
+motivação para controlar a verbosidade
+opções de nível de verbosidade
+como funciona cada uma
