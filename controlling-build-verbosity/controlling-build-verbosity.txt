@@ -1,3 +1,4 @@
 motivação para controlar a verbosidade
 opções de nível de verbosidade
 como funciona cada uma
+exemplo do mesmo comando com cada uma das opções
