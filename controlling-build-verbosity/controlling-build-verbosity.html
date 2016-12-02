@@ -44,5 +44,68 @@
         Essa opção é útil para desenvolvedores de plugins ou caso se queira
         analisar um problema complexo no gerenciamento de dependências.
         </p>
+        
+        <p>
+        Exemplos de builds com cada opção:
+        </p>
+        
+        <p>
+        mvn -q package
+        </p>
+        
+        <p>
+        ------------------------------------------------------- <br />
+        T E S T S <br />
+        ------------------------------------------------------- <br />
+        Running com.andgomes.AppTest <br />
+        Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec <br /> <br />
+        Results : <br /> <br />
+        Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+        </p>
+        
+        <p>
+        mvn -e package
+        </p>
+        
+        <p>
+        [INFO] Error stacktraces are turned on. <br />
+        [INFO] Scanning for projects... <br />                                                                       
+        [INFO] ------------------------------------------------------------------------ <br />
+        [INFO] Building simple-project 1.0-SNAPSHOT <br />
+        [INFO] ------------------------------------------------------------------------ <br />
+        ... <br />
+        [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project simple-project: Compilation failure: Compilation failure: <br />
+        ... <br />
+        [ERROR] -> [Help 1] <br />
+        org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project simple-project: Compilation failure <br />
+	    at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212) <br />
+	    at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153) <br />
+        ...
+        </p>
+        
+        <p>
+        mvn -X package
+        </p>
+        
+        <p>
+        Maven home: /opt/maven3 <br />
+        Java version: 1.7.0_121, vendor: Oracle Corporation <br />
+        ... <br />
+        [DEBUG] Created new class realm maven.api <br />
+        [DEBUG] Importing foreign packages into class realm maven.api <br />
+        [DEBUG]   Imported: javax.enterprise.inject.* &lt; plexus.core <br />
+        [DEBUG]   Imported: javax.enterprise.util.* &lt; plexus.core <br />
+        [DEBUG]   Imported: javax.inject.* &lt; plexus.core <br />
+        ... <br />
+        [INFO] Error stacktraces are turned on. <br />
+        [DEBUG] Reading global settings from /opt/maven3/conf/settings.xml <br />
+        [DEBUG] Reading user settings from /home/cacomp/.m2/settings.xml <br />
+        [DEBUG] Reading global toolchains from /opt/maven3/conf/toolchains.xml <br />
+        ... <br />
+        [DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:3.1:compile' with basic configurator --> <br />
+        [DEBUG]   (f) basedir = /home/cacomp/simple-project <br />
+        [DEBUG]   (f) buildDirectory = /home/cacomp/simple-project/target <br />
+        ...
+        </p>
     </body>
 </html>
