@@ -1,0 +1,6 @@
+explicar o que são profiles
+por que usar profiles
+tipos de profiles(conf/settings, .m2/settings e pom)
+criar um profile de projeto
+formas básicas de ativar esse profile(activeByDefault ou -Pprofile)
+como ver quais profiles estão ativos(help:active-profiles)
