@@ -7,5 +7,17 @@
 	</head>
 	<body>
 		<h1>Criando Profiles</h1>
+		
+		<p>
+		Em algumas situações, precisamos executar builds que sejam portáveis em
+		plataformas ou ambientes específicos. Para isso, precisamos que o build
+		detecte em qual plataforma está executando e tome as decisões
+		corretamente. Por exemplo, um projeto que utiliza bibliotecas de sistema
+		deve saber qual função chamar para não correr o risco de, estando no
+		Windows, chamar uma função do Linux. Para resolver esse problema, o
+		Maven permite a criação de profiles que podem ser ativados se
+		determinadas condições forem satisfeitas, de forma que cada profile
+		tenha suas próprias configurações.
+		</p>
 	</body>
 </html>
