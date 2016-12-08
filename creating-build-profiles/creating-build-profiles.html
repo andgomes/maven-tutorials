@@ -58,5 +58,23 @@
 	    properties, etc. No nosso caso, vamos apenas definir o profile como
 	    desativado configurando para false o valor de &lt;activeByDefault&gt;.
 		</p>
+		
+		<p>
+		Para sabermos quais perfis estão ativos, podemos utilizar o goal
+		active-profiles do plugin Help com o comando
+		</p>
+		
+		<p>
+		$ mvn help:active-profiles
+		</p>
+		
+		Como o dev é o único profile criado no nosso projeto e foi configurado
+		como desativado por padrão, nenhum profile será listado no resultado.
+		
+		<p>
+		[INFO] <br />
+        Active Profiles for Project 'com.andgomes:simple-project:jar:1.0-SNAPSHOT': <br /> <br />
+        The following profiles are active:
+		</p>
 	</body>
 </html>
