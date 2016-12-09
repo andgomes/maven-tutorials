@@ -68,13 +68,44 @@
 		$ mvn help:active-profiles
 		</p>
 		
+		<p>
 		Como o dev é o único profile criado no nosso projeto e foi configurado
 		como desativado por padrão, nenhum profile será listado no resultado.
+		</p>
 		
 		<p>
 		[INFO] <br />
         Active Profiles for Project 'com.andgomes:simple-project:jar:1.0-SNAPSHOT': <br /> <br />
         The following profiles are active:
+		</p>
+		
+		<p>
+		Existem várias formas de ativar um profile. Neste tutorial veremos
+		somente as duas formas mais básicas. Uma maneira é simplesmente
+		configurar o parâmetro activeByDefault para true. Se o profile estiver
+		ativado por padrão e executarmos o goal active-profiles, aquele profile
+		será listado no resultado.
+		</p>
+		
+		<p>
+		$ mvn help:active-profiles
+		</p>
+		
+		<p>
+		[INFO] <br /> 
+        Active Profiles for Project 'com.andgomes:simple-project:jar:1.0-SNAPSHOT': <br /> <br /> 
+        The following profiles are active: <br /> <br />
+        - dev (source: com.andgomes:simple-project:1.0-SNAPSHOT)
+		</p>
+		
+		</p>
+		A outra maneira de ativar um profile é incluindo a opção -P<nome> no
+		comando da execução do build. Por exemplo, se quisermos compilar os
+		códigos-fonte com o profile dev ativado, podemos executar o comando
+		</p>
+		
+		<p>
+		$ mvn -Pdev compile
 		</p>
 	</body>
 </html>
