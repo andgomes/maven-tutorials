@@ -10,7 +10,7 @@
 		
 		<p>
 		Em algumas situações, precisamos executar builds que sejam portáveis em
-		plataformas ou ambientes específicos. Para isso, precisamos que o build
+		plataformas ou ambientes específicos. Para isso, precisamos que o Maven
 		detecte em qual plataforma está executando e tome as decisões
 		corretamente. Por exemplo, um projeto que utiliza bibliotecas de sistema
 		deve saber qual função chamar para não correr o risco de, estando no
@@ -35,7 +35,7 @@
 		</p>
 		
 		<p>
-		Como exemplo, vamos criar um profile simples de projeto com o id dev.
+		Como exemplo, vamos criar um profile de projeto simples com o id dev.
 		</p>
         
 		<p>
@@ -56,7 +56,7 @@
 	    No corpo da tag &lt;activation&gt;, podemos colocar várias condições de
 	    ativação do profile, como sistema operacional, versão do JDK,
 	    properties, etc. No nosso caso, vamos apenas definir o profile como
-	    desativado configurando para false o valor de &lt;activeByDefault&gt;.
+	    desativado configurando para false o valor do parâmetro activeByDefault.
 		</p>
 		
 		<p>
@@ -80,11 +80,12 @@
 		</p>
 		
 		<p>
-		Existem várias formas de ativar um profile. Neste tutorial veremos
+		Existem várias formas de ativar um profile. Neste tutorial, veremos
 		somente as duas formas mais básicas. Uma maneira é simplesmente
-		configurar o parâmetro activeByDefault para true. Se o profile estiver
+		configurar o parâmetro activeByDefault para true. Se um profile estiver
 		ativado por padrão e executarmos o goal active-profiles, aquele profile
-		será listado no resultado.
+		será listado no resultado. Por exemplo, se o profile dev estiver ativado
+		por padrão, teremos o seguinte resultado:
 		</p>
 		
 		<p>
@@ -99,7 +100,7 @@
 		</p>
 		
 		</p>
-		A outra maneira de ativar um profile é incluindo a opção -P<nome> no
+		Outra maneira de ativar um profile é incluindo a opção -P<nome> no
 		comando da execução do build. Por exemplo, se quisermos compilar os
 		códigos-fonte com o profile dev ativado, podemos executar o comando
 		</p>
