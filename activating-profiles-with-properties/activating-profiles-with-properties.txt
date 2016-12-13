@@ -1,0 +1,4 @@
+dizer que tem uma forma de ativar através de properties
+criar profile
+mostrar a configuração da property no terminal
+exibir resultado da execução do goal active-profiles
