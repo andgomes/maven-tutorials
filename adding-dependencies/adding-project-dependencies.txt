@@ -1,0 +1,4 @@
+podemos precisar utilizar alguma api
+onde encontrar os artefatos(repositório central do Maven)
+sintaxe de dependencia
+uma vez no repositório local, não precisa mais baixar
