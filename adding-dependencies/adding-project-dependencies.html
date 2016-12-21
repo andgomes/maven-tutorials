@@ -18,5 +18,40 @@
 		Nos projetos Maven, como era de se esperar, todas as dependências são
 		declaradas no arquivo POM.
 		</p>
+		
+		<p>
+		Para entender a sintaxe da declaração de uma dependência, vamos utilizar
+		como exemplo o JUnit, o framework de testes que já vem como dependência
+		padrão quando criamos um projeto.
+		</p>
+		
+		<p>
+		&lt;project ...&gt; <br />
+		... <br />
+		--&lt;dependencies&gt; <br />
+		----&lt;dependency&gt; <br />
+		------&lt;groupId&gt;junit&lt;/groupId&gt; <br />
+		------&lt;artifactId&gt;junit&lt;/artifactId&gt; <br />
+		------&lt;version&gt;4.12&lt;/version&gt; <br />
+		----&lt;/dependency&gt; <br />
+		----&lt;dependency&gt; <br />
+		------&lt;!--outra dependência--&gt; <br />
+		----&lt;/dependency&gt; <br />
+		----... <br />
+		--&lt;/dependencies&gt; <br />
+		... <br />
+		&lt;/project&gt;
+		</p>
+		
+		<p>
+		Para cada dependência, precisamos especificar três informações:
+		groupId, artifactId e version. Sua suspeita sobre toda dependência ser
+		também um projeto Maven está correta. Quando declaramos uma dependência
+		e executamos um build, o Maven vai ao <em>repositório central</em>,
+		procura por um projeto com as três coordenadas e faz o download para o
+		repositório local(/home/username/.m2/repository). Na próxima vez em que
+		executar o build, como o artefato já está no repositório local, o Maven
+		não precisará mais fazer o download.
+		</p>
 	</body>
 </html>
