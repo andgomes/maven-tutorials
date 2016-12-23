@@ -16,5 +16,29 @@
 		tutorial, assim como temos feito nos tutoriais anteriores, vamos
 		utilizar o package JAR para gerar um arquivo neste formato.
 		</p>
+		
+		<p>
+		Vamos criar um projeto chamado simple-project e invocar a fase package.
+		Lembre-se de que, quando criamos um projeto com o archetype quickstart,
+		o packaging já é definido como JAR por padrão. 
+		</p>
+		
+		<p>
+		$ mvn package
+		</p>
+		
+		<p>
+		O arquivo JAR será criado e salvo no diretório target. O nome do arquivo
+		segue a sintaxe [artifactId]-[version].jar. Por exemplo, se o artifactId
+		do nosso projeto é simple-project e a versão 1.0, o nome do arquivo JAR
+		será simple-project-1.0.jar. Além do arquivo distribuível, são criados
+		os diretórios correspondentes às fases anteriores ao package(como
+		compile e test) e um arquivo chamado pom.properties, localizado no
+		diretório maven-archiver.
+		</p>
+		
+		<p>
+		---arquivo pom.properties---
+		</p>
 	</body>
 </html>
