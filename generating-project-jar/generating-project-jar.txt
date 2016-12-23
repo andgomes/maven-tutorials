@@ -1,0 +1,5 @@
+uma das principais fases
+engloba todas as fases anteriores
+mostrar comando
+mostrar arquivos gerados
+mostrar o conteúdo do arquivo JAR gerado
