@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>Gerando o Arquivo Distribuível de um Projeto</title>
-		<meta http-equive="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
 		<h1>Gerando o Arquivo Distribuível de um Projeto</h1>
@@ -39,6 +39,41 @@
 		
 		<p>
 		---arquivo pom.properties---
+		</p>
+		
+		<p>
+		Agora vamos dar uma olhada no conteúdo do arquivo JAR.
+		</p>
+		
+		<p>
+		com/ <br />
+		--andgomes/ <br />
+		----App.class <br />
+		META-INF/ <br />
+		--maven/ <br />
+		----com.andgomes/ <br />
+		------simple-project/ <br />
+		--------pom.properties <br />
+		--------pom.xml <br />
+		--MANIFEST.MF
+		</p>
+		
+		<p>
+		O diretório de classes do nosso projeto foi copiado para a raíz da
+		estrutura do arquivo, juntamente com um diretório chamado META-INF que,
+		além de conter os arquivos pom.xml e pom.properties, contém um MANIFEST.
+		</p>
+		
+		<p>
+		---arquivo MANIFEST.MF---
+		</p>
+		
+		<p>
+		Como não fizemos nenhuma configuração inicial e só executamos o
+		comando package, o MANIFEST gerado pelo Maven é o mais simples possível.
+		Caso quiséssemos incluir informações ou arquivos adicionais, como classe
+		principal, classpath ou códigos-fonte, teríamos que configurar os
+		plugins responsáveis por essas ações na seção build do arquivo POM.
 		</p>
 	</body>
 </html>
