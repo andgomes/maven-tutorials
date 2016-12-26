@@ -1,0 +1,6 @@
+motivação para agregar projetos(modularização)
+criar projetos(submódulo como subdiretório do projeto principal) como exemplo
+sintaxe da declaração de um módulo
+mostrar como funciona o build dos projeto multi-módulos com um comando
+mostrar resultado do terminal
+o que fazer se o módulo não for subdiretório
