@@ -11,13 +11,36 @@
 		<p>
 		Em sistemas muito grandes e complexos, a solução para diminuir essa
 		complexidade muitas vezes é a modularização. Além disso, um projeto pode
-		depender de outros módulos desenvolvidos por outra equipe ou
-		instituição. Em projetos Maven que precisam ser divididos em módulos,
-		podemos utilizar uma feature chamada de agregação. Com a agregação,
-		podemos declarar quais são os módulos dos quais nosso projeto é
-		composto. Dessa forma, podemos fazer o build de todas as partes do
-		projeto apenas executando o comando no projeto principal, o projeto
-		agregador.
+		depender de módulos desenvolvidos por outra equipe ou instituição.
+		Em projetos Maven que precisam ser divididos em módulos, podemos
+		utilizar uma feature chamada de agregação. Com a agregação, podemos
+		declarar quais são os módulos dos quais nosso projeto é composto. Dessa
+		forma, podemos fazer o build de todas as partes do projeto apenas
+		executando o comando no projeto agregador.
+		</p>
+		
+		<p>
+		Como exemplo, vamos criar um diretório chamado aggregating-project e
+		criar o arquivo pom.xml do projeto agregador dentro deste diretório. É
+		nesse arquivo POM que iremos definir quais são os módulos do nosso
+		projeto.
+		</p>
+		
+		<p>
+		&lt;?xml version="1.0" encoding="UTF-8"?&gt; <br />
+		&lt;project xmlns="http://maven.apache.org/POM/4.0.0" <br />
+		---------xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" <br />
+		---------xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 <br />
+		---------http://maven.apache.org/maven-v4_0_0.xsd"&gt; <br />
+		--&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; <br />
+		--&lt;groupId&gt;org.andgomes&lt;/groupId&gt; <br />
+		--&lt;artifactId&gt;aggregate-project&lt;/artifactId&gt; <br />
+		--&lt;packaging&gt;pom&lt;/packaging&gt; <br />
+		--&lt;version&gt;0.0.1&lt;/version&gt; <br />
+		--&lt;modules&gt; <br />
+		----&lt;module&gt;module-project&lt;/module&gt; <br />
+		--&lt;/modules&gt; <br />
+		&lt;/project&gt;
 		</p>
 	</body>
 </html>
