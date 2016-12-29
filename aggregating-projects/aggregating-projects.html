@@ -55,9 +55,9 @@
 		<p>
 		Agora precisamos criar o projeto module-project, que é referenciado pelo
 		arquivo POM do projeto agregador. É importante dizer que, da forma como
-		declaramos o módulo no arquivo POM acima,
-		o diretório do projeto module-project precisa estar dentro do diretório
-		aggregating-project. Mais à frente veremos como contornar essa restrição.
+		declaramos o módulo no arquivo POM acima, o diretório do projeto
+		module-project precisa estar dentro do diretório aggregating-project.
+		Mais à frente veremos como contornar essa restrição.
 		</p>
 		
 		<p>
@@ -70,6 +70,20 @@
 		$ mvn archetype:generate -DgroupId=org.andgomes
 		-DartifactId=module-project
 		-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+		</p>
+		
+		<p>
+		Depois de criado o projeto, o diretório aggregating-project deve ter a
+		seguinte estrutura:
+		</p>
+		
+		<p>
+		pom.xml <br />
+		module-project/ <br />
+		|--src/ <br />
+		|--|--main/java/org/andgomes/App.java <br />
+		|--|--test/java/org/andgomes/AppTest.java <br />
+		|--pom.xml
 		</p>
 	</body>
 </html>
