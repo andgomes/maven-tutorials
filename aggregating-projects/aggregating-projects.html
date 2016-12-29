@@ -42,5 +42,34 @@
 		--&lt;/modules&gt; <br />
 		&lt;/project&gt;
 		</p>
+		
+		<p>
+		Em projetos agregadores, o packaging obrigatoriamente deve ser do tipo
+		POM. Isso faz sentido porque o objetivo de um projeto agregador é
+		simplesmente declarar quais são os módulos que compõem a aplicação. É na
+		seção modules que declaramos os artifactIds desses módulos. No nosso
+		exemplo, como vamos criar apenas um módulo, só adicionamos um module com
+		o artifactId module-project.
+		</p>
+		
+		<p>
+		Agora precisamos criar o projeto module-project, que é referenciado pelo
+		arquivo POM do projeto agregador. É importante dizer que, da forma como
+		declaramos o módulo no arquivo POM acima,
+		o diretório do projeto module-project precisa estar dentro do diretório
+		aggregating-project. Mais à frente veremos como contornar essa restrição.
+		</p>
+		
+		<p>
+		Dito isso, vamos entrar no diretório aggregating-project e utilizar o já
+		conhecido archetype quickstart para criar o projeto module-project.
+		</p>
+		
+		<p>
+		$ cd aggregatin-project <br />
+		$ mvn archetype:generate -DgroupId=org.andgomes
+		-DartifactId=module-project
+		-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+		</p>
 	</body>
 </html>
