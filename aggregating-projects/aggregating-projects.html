@@ -99,6 +99,21 @@
 		</p>
 		
 		<p>
+		Durante o processamento do build, o Maven irá mostrar a ordem de
+		execução dos projetos através de um mecanismo chamado Reactor. A função
+		do Reactor é fazer o escalonamento dos módulos de forma que, se um
+		módulo X depende de um módulo Y, o módulo Y é processado primeiro. Como
+		nosso projeto só tem um módulo, o trabalho do Reactor aqui é fácil.
+		</p>
+		
+		<p>
+		[INFO] Reactor Build Order: <br />
+		[INFO] <br />
+		[INFO] aggregate-project <br />
+		[INFO] module-project
+		</p>
+		
+		<p>
 		Se a fase foi concluída normalmente, o diretório aggregating-project
 		deve ter resultado na seguinte estrutura.
 		</p>
