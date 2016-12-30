@@ -85,5 +85,40 @@
 		|--|--test/java/org/andgomes/AppTest.java <br />
 		|--pom.xml
 		</p>
+		
+		<p>
+		Agora que temos o projeto agregador e o módulo criados, vamos executar
+		um comando de build e verificar o resultado. Como foi dito no início
+		do post, se executarmos um comando de build no projeto agregador, o
+		efeito será o mesmo de executar esse comando simultaneamente em todos os
+		módulos. Como exemplo, vamos invocar a fase compile.
+		</p>
+		
+		<p>
+		$ mvn compile
+		</p>
+		
+		<p>
+		Se a fase foi concluída normalmente, o diretório aggregating-project
+		deve ter resultado na seguinte estrutura.
+		</p>
+		
+		<p>
+		pom.xml <br />
+		module-project/ <br />
+		|--src/ <br />
+		|--|--main/java/org/andgomes/App.java <br />
+		|--|--test/java/org/andgomes/AppTest.java <br />
+		|--target/
+		|--|--classes/
+		|--|--maven-status/
+		|--pom.xml
+		</p>
+		
+		<p>
+		Como esperado, mesmo tendo invocado a fase compile no diretório
+		aggregating-project, o efeito foi o mesmo de termos executado o comando
+		no module-project.
+		</p>
 	</body>
 </html>

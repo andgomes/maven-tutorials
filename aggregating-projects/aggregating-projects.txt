@@ -3,5 +3,5 @@ criar projetos(submódulo como subdiretório do projeto principal) como exemplo
 mostrar como ficou a estrutura do diretório
 sintaxe da declaração de um módulo
 mostrar como funciona o build dos projeto multi-módulos com um comando
-mostrar resultado do terminal
+mostrar resultado do terminal(ordem de execução do Reactor)
 o que fazer se o módulo não for subdiretório
