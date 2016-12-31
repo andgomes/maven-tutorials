@@ -135,5 +135,26 @@
 		aggregating-project, o efeito foi o mesmo de termos executado o comando
 		no module-project.
 		</p>
+		
+		<p>
+		No arquivo POM do projeto agregador, dissemos que, da forma como o
+		módulo foi declarado, o diretório module-project obrigatoriamente
+		deveria ser subdiretório de aggregating-project. Se quisermos que um
+		módulo esteja no mesmo nível ou em níveis acima do projeto agregador,
+		precisamos especificar o caminho relativo do módulo a partir do
+		diretório do projeto agregador. Por exemplo, se quisermos que o
+		diretório module-project esteja ao lado de aggregating-project, a
+		declaração do módulo no arquivo POM será a seguinte:
+		</p>
+		
+		<p>
+		&lt;project ...&gt; <br />
+		--... <br />
+		--&lt;modules&gt; <br />
+		----&lt;module&gt;../module-project&lt;/module&gt; <br />
+		--&lt;/modules&gt; <br />
+		--... <br />
+		&lt;/project&gt;
+		</p>
 	</body>
 </html>
