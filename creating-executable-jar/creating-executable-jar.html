@@ -3,9 +3,10 @@
 <html>
 	<head>
 		<title>Gerando um JAR Executável</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	<body>
-		<h1>Gerando um JAR Executável</h1>
+		<h1>Gerando um Arquivo JAR Executável</h1>
 		
 		<p>
 		No tutorial Gerando o Arquivo Distribuível de um Projeto, vimos como
@@ -13,10 +14,41 @@
 		MANIFEST criado pelo Maven. Porém, aquela maneira de gerar um arquivo
 		JAR, apesar de criar um arquivo que pode ser utilizado como dependência
 		de outros projetos, não possibilita sua própria execução, por que o
-		MANIFEST não contém a informação de qual é a classe principal do
-		projeto, aquela que possui o método main e deve ser executada. Neste
-		post, veremos como configurar, através do plugin Jar, a classe principal
-		que será adicionada no MANIFEST do arquivo distribuível.
+		MANIFEST não contém a declaração da classe principal do projeto, aquela
+		que possui um método main e deve ser executada. Neste post, veremos como
+		incluir a declaração de classe principal no MANIFEST do arquivo
+		distribuível através do plugin Jar.
+		</p>
+		
+		<p>
+		Como exemplo, vamos utilizar o archetype Quickstart para criar um
+		projeto simples. Vamos chamar esse projeto de simple-project.
+		</p>
+		
+		<p>
+		$ mvn archetype:generate -DgroupId=org.andgomes
+		-DartifactId=simple-project
+		-DarchetypeArtifactId=maven-archetype-quickstart DinteractiveMode=false
+		</p>
+		
+		<p>
+		Como sabemos, no diretório src/main é criado arquivo App.java, uma
+		classe de exemplo que o archetype cria quando executamos o goal
+		generate. Vamos aproveitar que essa classe já possui um método main e
+		iremos utilizá-la como classe principal do projeto.
+		</p>
+		
+		<p>
+		App.java
+		</p>
+		
+		<p>
+		package org.andgomes; <br /> <br />
+		public class App { <br /> <br />
+		----public static void main(String[] args) { <br />
+		--------System.out.println("Hello World!"); <br />
+		----} <br /> <br />
+		}
 		</p>
 	</body>
 </html>
