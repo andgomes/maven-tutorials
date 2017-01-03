@@ -1,0 +1,7 @@
+motivação
+criar um projeto simples
+mostrar a classe principal(App.java)
+configurar o plugin na seção build
+executar o build(invocando a fase package)
+mostrar o conteúdo do arquivo MANIFEST
+executar o arquivo JAR(java -jar)
