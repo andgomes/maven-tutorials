@@ -22,7 +22,7 @@
 		
 		<p>
 		Como exemplo, vamos utilizar o archetype Quickstart para criar um
-		projeto simples. Vamos chamar esse projeto de simple-project.
+		projeto simples. O artifactId desse projeto será simple-project.
 		</p>
 		
 		<p>
@@ -49,6 +49,39 @@
 		--------System.out.println("Hello World!"); <br />
 		----} <br /> <br />
 		}
+		</p>
+		
+		<p>
+		Agora vamos configurar o plugin Jar na seção build para que, ao criar o
+		arquivo distribuível, seja inserido no MANIFEST o parâmetro de classe
+		principal. É o plugin Jar que, através do goal jar, faz o packaging do
+		projeto e cria todos os arquivos necessários, entre eles o próprio
+		MANIFEST.
+		</p>
+		
+		<p>
+		&lt;project ...&gt; <br />
+		--... <br />
+		--&lt;build&gt; <br />
+		----&lt;plugins&gt; <br />
+		------... <br />
+		------&lt;plugin&gt; <br />
+		--------&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; <br />
+		--------&lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt; <br />
+		--------&lt;version&gt;3.0.2&lt;/version&gt; <br />
+		--------&lt;configuration&gt; <br />
+		----------&lt;archive&gt; <br />
+		------------&lt;manifest&gt; <br />
+		--------------&lt;mainClass&gt;org.andgomes.App&lt;/mainClass&gt; <br />
+		------------&lt;/manifest&gt; <br />
+		----------&lt;/archive&gt; <br />
+		--------&lt;/configuration&gt; <br />
+		------&lt;/plugin&gt; <br />
+		------... <br />
+		----&lt;/plugins&gt; <br />
+		--&lt;/build&gt; <br />
+		--... <br />
+		&lt;/project&gt;
 		</p>
 	</body>
 </html>
