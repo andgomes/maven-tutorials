@@ -53,7 +53,7 @@
 		
 		<p>
 		Agora vamos configurar o plugin Jar na seção build para que, ao criar o
-		arquivo distribuível, seja inserido no MANIFEST o parâmetro de classe
+		arquivo distribuível, seja adicionado no MANIFEST o parâmetro de classe
 		principal. É o plugin Jar que, através do goal jar, faz o packaging do
 		projeto e cria todos os arquivos necessários, entre eles o próprio
 		MANIFEST.
@@ -82,6 +82,44 @@
 		--&lt;/build&gt; <br />
 		--... <br />
 		&lt;/project&gt;
+		</p>
+		
+		<p>
+		Vamos invocar a fase package e verificar o conteúdo do arquivo MANIFEST
+		criado pelo plugin.
+		</p>
+		
+		<p>
+		$ mvn package
+		</p>
+		
+		<p>
+		Para ver o conteúdo do arquivo MANIFEST, extraia o arquivo JAR e entre
+		no diretório META-INF.
+		</p>
+		
+		<p>
+		Manifest-Version: 1.0 <br />
+		Built-By: anderson <br />
+		Build-Jdk: 1.7.0_121 <br />
+		Created-By: Apache Maven 3.3.9 <br />
+		Main-Class: org.andgomes.App
+		</p>
+		
+		<p>
+		Como esperado, o MANIFEST criado tem um parâmetro Main-Class com o nome
+		da classe principal que definimos no arquivo POM. Quando executarmos o
+		arquivo JAR, o método main da classe App será executado. No nosso caso,
+		a classe apenas imprime a string Hello World! no terminal.
+		</p>
+		
+		<p>
+		$ cd simple-project/target <br />
+		$ java -jar simple-project-1.0-SNAPSHOT.jar
+		</p>
+		
+		<p>
+		Hello World!
 		</p>
 	</body>
 </html>
