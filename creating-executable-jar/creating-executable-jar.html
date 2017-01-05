@@ -22,13 +22,13 @@
 		
 		<p>
 		Como exemplo, vamos utilizar o archetype Quickstart para criar um
-		projeto simples. O artifactId desse projeto será simple-project.
+		projeto simples. Chamaremos esse projeto de simple-project.
 		</p>
 		
 		<p>
 		$ mvn archetype:generate -DgroupId=org.andgomes
 		-DartifactId=simple-project
-		-DarchetypeArtifactId=maven-archetype-quickstart DinteractiveMode=false
+		-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 		</p>
 		
 		<p>
@@ -52,11 +52,11 @@
 		</p>
 		
 		<p>
-		Agora vamos configurar o plugin Jar na seção build para que, ao criar o
-		arquivo distribuível, seja adicionado no MANIFEST o parâmetro de classe
-		principal. É o plugin Jar que, através do goal jar, faz o packaging do
-		projeto e cria todos os arquivos necessários, entre eles o próprio
-		MANIFEST.
+		Agora vamos configurar o plugin Jar na seção build do POM para que, ao
+		criar o arquivo distribuível, seja adicionado no MANIFEST o parâmetro de
+		classe principal. É o plugin Jar que, através do goal jar, faz o
+		packaging do projeto e cria todos os arquivos necessários, entre eles o
+		próprio MANIFEST.
 		</p>
 		
 		<p>
@@ -94,8 +94,8 @@
 		</p>
 		
 		<p>
-		Para ver o conteúdo do arquivo MANIFEST, extraia o arquivo JAR e entre
-		no diretório META-INF.
+		Para ver o conteúdo do MANIFEST, extraia o arquivo JAR e entre no
+		diretório META-INF.
 		</p>
 		
 		<p>
@@ -110,7 +110,7 @@
 		Como esperado, o MANIFEST criado tem um parâmetro Main-Class com o nome
 		da classe principal que definimos no arquivo POM. Quando executarmos o
 		arquivo JAR, o método main da classe App será executado. No nosso caso,
-		a classe apenas imprime a string Hello World! no terminal.
+		a classe apenas imprime a string "Hello World!" no terminal.
 		</p>
 		
 		<p>
