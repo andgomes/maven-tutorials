@@ -1,0 +1,9 @@
+motivação(similar à motivação da agregação, com remoção de duplicação)
+criar projetos(parent-project e child-project) manualmente
+parent-project declara uma propriedade e child-project utiliza essa propriedade
+como versão da dependência JUnit
+sintaxe da declaração de um parent
+mostrar como ficou a estrutura do diretório
+executar build de child-project
+o que fazer se o parent não estiver no nível acima
+dica: utilizar agregação junto com herança
