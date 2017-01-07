@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Utilizando a Herança entre Projetos</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
 		<h1>Utilizando a Herança entre Projetos</h1>
@@ -16,6 +17,37 @@
 		propriedades. A herança nos permite declarar essas informações apenas
 		uma vez em um projeto pai(parent) e herdá-las em módulos filhos(childs),
 		evitando a duplicação e todas as suas consequências.
+		</p>
+		
+		<p>
+		Como exemplo, vamos criar um projeto simples no qual iremos declarar uma
+		dependência e uma propriedade. Essas declarações serão herdadas
+		posteriormente por outro projeto que criaremos. Crie um diretório
+		parent-project e, dentro deste diretório, salve o arquivo POM que contém
+		as declarações da dependência e da propriedade.
+		</p>
+		
+		<p>
+		&lt;project xmlns="http://maven.apache.org/POM/4.0.0" <br />
+		---------xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" <br />
+		---------xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 <br />
+		-----------------------------http://maven.apache.org/maven-v4_0_0.xsd"&gt; <br />
+		--&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; <br />
+		--&lt;groupId&gt;org.andgomes&lt;/groupId&gt; <br />
+		--&lt;artifactId&gt;inheritance-project&lt;/artifactId&gt; <br />
+		--&lt;version&gt;0.0.1&lt;/version&gt; <br />
+		--&lt;packaging&gt;pom&lt;/packaging&gt; <br />
+		--&lt;properties&gt; <br />
+		----&lt;parent.encoding&gt;UTF-8&lt;/parent.encoding&gt; <br />
+		--&lt;/properties&gt; <br />
+		--&lt;dependencies&gt; <br />
+		----&lt;dependency&gt; <br />
+		------&lt;groupId&gt;junit&lt;/groupId&gt; <br />
+		------&lt;artifactId&gt;junit&lt;/artifactId&gt; <br />
+		------&lt;version&gt;4.12&lt;/version&gt; <br />
+		----&lt;/dependency&gt; <br />
+		--&lt;/dependencies&gt; <br />
+		&lt;/project&gt;
 		</p>
 	</body>
 </html>
