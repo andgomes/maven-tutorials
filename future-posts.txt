@@ -1,4 +1,3 @@
 Maven 3.x e o maior rigor na utilização de plugins
-Tipos de build(default, clean e site) e fases desses builds
 Executando Testes com classes POJO
 Executando Testes com a ferramente TestNG

@@ -23,8 +23,8 @@
 		Como exemplo, vamos criar um projeto simples no qual iremos declarar uma
 		dependência e uma propriedade. Essas declarações serão herdadas
 		posteriormente por outro projeto que criaremos. Crie um diretório
-		parent-project e, dentro deste diretório, salve o arquivo POM que contém
-		as declarações da dependência e da propriedade.
+		inheritance-project e, dentro deste diretório, salve o arquivo POM que
+		contém as declarações da dependência e da propriedade.
 		</p>
 		
 		<p>
@@ -48,6 +48,74 @@
 		----&lt;/dependency&gt; <br />
 		--&lt;/dependencies&gt; <br />
 		&lt;/project&gt;
+		</p>
+		
+		<p>
+		Definimos uma propriedade e uma dependência. A propriedade
+		parent.enconding será utilizada pelos módulos filhos na configuração do
+		source encoding e a dependência do JUnit será utilizada na execução dos
+		testes unitários.
+		</p>
+		
+		<p>
+		Agora vamos criar o projeto que herdará essas informações. Para isso,
+		vamos criar um diretório dentro de inheritance-project e chamá-lo de
+		child-project. Salve o arquivo pom.xml dentro deste diretório e as
+		classes App.java e AppTest.java nos subdiretórios
+		src/main/java/org/andgomes e src/test/java/org/andgomes,
+		respectivamente.
+		</p>
+		
+		<p>
+		pom.xml
+		</p>
+		
+		<p>
+		&lt;project xmlns="http://maven.apache.org/POM/4.0.0" <br />
+		---------xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" <br />
+		---------xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 <br />
+		-----------------------------http://maven.apache.org/maven-v4_0_0.xsd"&gt; <br />
+		--&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; <br />
+		--&lt;parent&gt; <br />
+		----&lt;groupId&gt;org.andgomes&lt;/groupId&gt; <br />
+		----&lt;artifactId&gt;inheritance-project&lt;/artifactId&gt; <br />
+		----&lt;version&gt;0.0.1&lt;/version&gt; <br />
+		--&lt;/parent&gt; <br />
+		--&lt;artifactId&gt;child-project&lt;/artifactId&gt; <br />
+		--&lt;packaging&gt;jar&lt;/packaging&gt; <br />
+		--&lt;properties&gt; <br />
+		----&lt;project.build.sourceEncoding&gt;${parent.encoding}&lt;/project.build.sourceEncoding&gt; <br />
+		--&lt;/properties&gt; <br />
+		&lt;/project&gt;
+		</p>
+		
+		<p>
+		App.java
+		</p>
+		
+		<p>
+		package org.andgomes; <br /> <br />
+		----public class App { <br />
+		--------public static void main(String[] args) { <br />
+		------------System.out.println("Hello World!"); <br />
+		----} <br />
+		}
+		</p>
+		
+		<p>
+		AppTest.java
+		</p>
+		
+		<p>
+		package org.andgomes; <br /> <br />
+		import org.junit.Test; <br />
+		import static org.junit.Assert.assertTrue; <br /> <br />
+		public class AppTest { <br />
+		----@Test <br />
+		----public void testAssertTrue() { <br />
+		--------assertTrue(true); <br />
+		----} <br />
+		}
 		</p>
 	</body>
 </html>
