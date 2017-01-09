@@ -117,5 +117,23 @@
 		----} <br />
 		}
 		</p>
+		
+		<p>
+		Na seção parent, declaramos as coordenadas(groupId, artifactId e
+		version) do projeto pai de child-project, no nosso caso, o
+		parent-project. Perceba que, no arquivo POM do projeto child-project,
+		só especificamos uma coordenada, o artifactId. Não precisamos informar
+		as outras duas por que groupId e version são herdadas do projeto pai. Ou
+		seja, as coordenadas do projeto child-project são: org.andgomes,
+		child-project e 0.0.1.
+		</p>
+		
+		<p>
+		Além de declarar qual projeto é pai de child-project, utilizamos o valor
+		da propriedade parent.encoding, herdada do projeto parent-project, como
+		valor do source encoding de child-project. Em outras palavras, se o
+		valor de parent.encoding é UTF-8, o encoding de child-project será
+		UTF-8.
+		</p>
 	</body>
 </html>
