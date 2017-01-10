@@ -186,5 +186,35 @@
 		[INFO] BUILD SUCCESS <br />
 		[INFO] -----------------------------------------------------------------
 		</p>
+		
+		<p>
+		Destaquei as duas partes mais relevantes da execução para podermos ver
+		que realmente tanto a propriedade quanto a dependência foram herdadas
+		pelo projeto child-project. Como esperado, o valor de encoding é o mesmo
+		valor da propriedade parent.encoding e os testes executaram normalmente.
+		</p>
+		
+		<p>
+		Na herança, quando um módulo declara um projeto parent, o diretório
+		desse projeto deve estar acima do diretório do módulo. Caso o diretório
+		do projeto parent não esteja no nível acima, precisamos adicionar o
+		caminho relativo do POM do projeto parent na seção parent. Por exemplo,
+		se o diretório inheritance-project estiver no mesmo nível do diretório
+		child-project, a declaração na seção parent do arquivo POM do
+		child-project será a seguinte:
+		</p>
+		
+		<p>
+		&lt;project ...&gt; <br />
+		--... <br />
+		--&lt;parent&gt; <br />
+		----&lt;groupId&gt;org.andgomes&lt;/groupId&gt; <br />
+		----&lt;artifactId&gt;inheritance-project&lt;/artifactId&gt; <br />
+		----&lt;version&gt;0.0.1&lt;/version&gt; <br />
+		----&lt;relativePath&gt;../inheritance-project/pom.xml&lt;/relativePath&gt; <br />
+		--&lt;/parent&gt; <br />
+		--... <br />
+		&lt;/project&gt;
+		</p>
 	</body>
 </html>
