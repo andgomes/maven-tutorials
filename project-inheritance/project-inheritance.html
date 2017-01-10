@@ -135,5 +135,56 @@
 		valor de parent.encoding é UTF-8, o encoding de child-project será
 		UTF-8.
 		</p>
+		
+		<p>
+		Vamos dar uma olhada em como ficou a estrutura do diretório
+		inheritance-project depois de termos criado os dois projetos.
+		</p>
+		
+		<p>
+		pom.xml <br />
+		child-project/ <br />
+		|--pom.xml <br />
+		|--src/ <br />
+		|--|--main/java/org/andgomes/App.java <br />
+		|--|--test/java/org/andgomes/AppTest.java
+		</p>
+		
+		<p>
+		Para testar se o projeto child-project está herdando a dependência e a
+		propriedade definida pelo parent-project, vamos executar um build
+		invocando a fase test. Iremos invocar a fase test por que, para que
+		nossos testes unitários sejam executados corretamente, precisamos ter o
+		JUnit como dependência. Em outras palavras, se a dependência não for
+		herdada, o build deverá falhar.
+		</p>
+		
+		<p>
+		$ cd inheritance-project <br />
+		$ cd child-project <br />
+		$ mvn test
+		</p>
+		
+		<p>
+		Saída
+		</p>
+		
+		<p>
+		[INFO] ----------------------------------------------------------------- <br />
+		[INFO] Building child-project 0.0.1 <br />
+		[INFO] ----------------------------------------------------------------- <br />
+		... <br />
+		[INFO] Using 'UTF-8' encoding to copy filtered resources. <br />
+		... <br />
+		------------------------------------------------------- <br />
+		T E S T S <br />
+		------------------------------------------------------- <br />
+		Running org.andgomes.AppTest <br />
+		Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.242 sec <br />
+		... <br />
+		[INFO] ----------------------------------------------------------------- <br />
+		[INFO] BUILD SUCCESS <br />
+		[INFO] -----------------------------------------------------------------
+		</p>
 	</body>
 </html>
