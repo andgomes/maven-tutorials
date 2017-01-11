@@ -16,15 +16,18 @@
 		uma aplicação possuem as mesmas dependências ou declaram as mesmas
 		propriedades. A herança nos permite declarar essas informações apenas
 		uma vez em um projeto pai(parent) e herdá-las em módulos filhos(childs),
-		evitando a duplicação e todas as suas consequências.
+		evitando assim a duplicação e todos os seus problemas.
 		</p>
 		
 		<p>
 		Como exemplo, vamos criar um projeto simples no qual iremos declarar uma
 		dependência e uma propriedade. Essas declarações serão herdadas
-		posteriormente por outro projeto que criaremos. Crie um diretório
-		inheritance-project e, dentro deste diretório, salve o arquivo POM que
-		contém as declarações da dependência e da propriedade.
+		posteriormente por outro projeto que criaremos.
+		</p>
+		
+		<p>
+		Crie um diretório inheritance-project e, dentro deste diretório, salve o
+		arquivo POM que contém as declarações da dependência e da propriedade.
 		</p>
 		
 		<p>
@@ -51,19 +54,17 @@
 		</p>
 		
 		<p>
-		Definimos uma propriedade e uma dependência. A propriedade
-		parent.enconding será utilizada pelos módulos filhos na configuração do
-		source encoding e a dependência do JUnit será utilizada na execução dos
-		testes unitários.
+		A propriedade parent.enconding será utilizada pelos módulos filhos na
+		configuração do source encoding e a dependência do JUnit será utilizada
+		na execução dos testes unitários.
 		</p>
 		
 		<p>
 		Agora vamos criar o projeto que herdará essas informações. Para isso,
-		vamos criar um diretório dentro de inheritance-project e chamá-lo de
-		child-project. Salve o arquivo pom.xml dentro deste diretório e as
-		classes App.java e AppTest.java nos subdiretórios
-		src/main/java/org/andgomes e src/test/java/org/andgomes,
-		respectivamente.
+		crie o diretório child-project dentro de inheritance-project, salve o
+		arquivo pom.xml dentro deste diretório e as classes App.java e
+		AppTest.java nos subdiretórios src/main/java/org/andgomes e
+		src/test/java/org/andgomes, respectivamente.
 		</p>
 		
 		<p>
@@ -121,9 +122,9 @@
 		<p>
 		Na seção parent, declaramos as coordenadas(groupId, artifactId e
 		version) do projeto pai de child-project, no nosso caso, o
-		parent-project. Perceba que, no arquivo POM do projeto child-project,
-		só especificamos uma coordenada, o artifactId. Não precisamos informar
-		as outras duas por que groupId e version são herdadas do projeto pai. Ou
+		parent-project. Perceba que, no arquivo POM do projeto child-project, só
+		especificamos uma coordenada, o artifactId. Não precisamos informar as
+		outras duas por que groupId e version são herdadas do projeto pai. Ou
 		seja, as coordenadas do projeto child-project são: org.andgomes,
 		child-project e 0.0.1.
 		</p>
@@ -189,9 +190,9 @@
 		
 		<p>
 		Destaquei as duas partes mais relevantes da execução para podermos ver
-		que realmente tanto a propriedade quanto a dependência foram herdadas
-		pelo projeto child-project. Como esperado, o valor de encoding é o mesmo
-		valor da propriedade parent.encoding e os testes executaram normalmente.
+		que tanto a propriedade quanto a dependência foram herdadas pelo projeto
+		child-project. Como esperado, o valor de encoding é o mesmo valor da
+		propriedade parent.encoding e os testes executaram normalmente.
 		</p>
 		
 		<p>
