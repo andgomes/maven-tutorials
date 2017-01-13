@@ -1,0 +1,6 @@
+além de builds relacionados ao código, o Maven pode fazer documentação
+a fase site e o lifecycle site
+criar um projeto com description
+invocar a fase site
+abrir o arquivo index.html no browser
+mostrar seções interessantes da página
