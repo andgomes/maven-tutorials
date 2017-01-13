@@ -18,5 +18,48 @@
 		Site, o plugin que é utilizado quando invocamos a fase site do lifecycle
 		Site.
 		</p>
+		
+		<p>
+		Vamos criar um projeto simples com o artifactId simple-project
+		utilizando o archetype Quickstart. Além disso, vamos adicionar a
+		descrição do projeto na tag description do arquivo POM. Essa descrição
+		será exibida na página web gerada pelo plugin.
+		</p>
+		
+		<p>
+		$ mvn archetype:generate -DgroupId=org.andgomes
+		-DartifactId=simple-project
+		-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+		</p>
+		
+		<p>
+		pom.xml
+		</p>
+		
+		<p>
+		&lt;project xmlns="http://maven.apache.org/POM/4.0.0" <br />
+		---------xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" <br />
+		---------xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 <br />
+		-----------------------------http://maven.apache.org/maven-v4_0_0.xsd"&gt; <br />
+		--&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; <br />
+		--&lt;groupId&gt;org.andgomes&lt;/groupId&gt; <br />
+		--&lt;artifactId&gt;simple-project&lt;/artifactId&gt; <br />
+		--&lt;packaging&gt;jar&lt;/packaging&gt; <br />
+		--&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; <br />
+		--&lt;name&gt;simple-project&lt;/name&gt; <br />
+		--&lt;url&gt;http://maven.apache.org&lt;/url&gt; <br />
+		--&lt;description&gt; <br />
+		----Projeto simples criado pelo archetype Quickstart <br />
+		--&lt;/description&gt; <br />
+		--&lt;dependencies&gt; <br />
+		----&lt;dependency&gt; <br />
+		------&lt;groupId&gt;junit&lt;/groupId&gt; <br />
+		------&lt;artifactId&gt;junit&lt;/artifactId&gt; <br />
+		------&lt;version&gt;4.12&lt;/version&gt; <br />
+		------&lt;scope&gt;test&lt;/scope&gt; <br />
+		----&lt;/dependency&gt; <br />
+		--&lt;/dependencies&gt; <br />
+		&lt;/project&gt;
+		</p>
 	</body>
 </html>
