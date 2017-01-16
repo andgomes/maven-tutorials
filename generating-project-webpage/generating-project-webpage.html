@@ -51,6 +51,15 @@
 		--&lt;description&gt; <br />
 		----Projeto simples criado pelo archetype Quickstart <br />
 		--&lt;/description&gt; <br />
+		--&lt;build&gt; <br />
+		----&lt;plugins&gt; <br />
+		------&lt;plugin&gt; <br />
+		--------&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; <br />
+		--------&lt;artifactId&gt;maven-project-info-reports-plugin&lt;/artifactId&gt; <br />
+		--------&lt;version&gt;2.7&lt;/version&gt; <br />
+		------&lt;/plugin&gt; <br />
+		----&lt;/plugins&gt; <br />
+		--&lt;/build&gt; <br />
 		--&lt;dependencies&gt; <br />
 		----&lt;dependency&gt; <br />
 		------&lt;groupId&gt;junit&lt;/groupId&gt; <br />
@@ -60,6 +69,16 @@
 		----&lt;/dependency&gt; <br />
 		--&lt;/dependencies&gt; <br />
 		&lt;/project&gt;
+		</p>
+		
+		<p>
+		Perceba que na seção plugins foram especificadas as coordenadas do
+		plugin Project Info Reports. O motivo é que, dependendo da versão desse
+		plugin, são adicionadas mais páginas ao site do projeto e, ao incluir a
+		versão mais recente, podemos ter um site com mais opções disponíveis.
+		Além disso, se o plugin não for incluído no arquivo POM, uma mensagem de
+		warning aparecerá durante o build recomendando que uma versão seja
+		especificada.
 		</p>
 		
 		<p>
@@ -95,6 +114,10 @@
 		<p>
 		Cada arquivo HTML corresponde à uma seção do site do projeto. Vamos
 		abrir o arquivo index.html no browser e ver o resultado.
+		</p>
+		
+		<p>
+		---arquivo index.html aberto no browser---
 		</p>
 	</body>
 </html>

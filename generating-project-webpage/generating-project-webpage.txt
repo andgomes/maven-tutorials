@@ -1,6 +1,8 @@
 além de builds relacionados ao código, o Maven pode fazer documentação
 a fase site e o lifecycle site
 criar um projeto com description
+explicar por que uma versão do plugin Projeto Info Reports tem que ser especificada
 invocar a fase site
 abrir o arquivo index.html no browser
 mostrar seções interessantes da página
+comentar sobre possibilidades de personalização do site
