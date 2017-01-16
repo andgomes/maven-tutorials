@@ -61,5 +61,40 @@
 		--&lt;/dependencies&gt; <br />
 		&lt;/project&gt;
 		</p>
+		
+		<p>
+		Ao invocar a fase site, o plugin Site irá gerar os arquivos HTML do
+		nosso projeto.
+		</p>
+		
+		<p>
+		$ mvn site
+		</p>
+		
+		<p>
+		Se o build for executado corretamente, o diretório site será criado
+		como subdiretório de target. É nesse diretório que os arquivos HTML são
+		armazenados.
+		</p>
+		
+		<p>
+		pom.xml
+		src/
+		|  main/java/org/andgomes/App.java
+		|  test/java/org/andgomes/AppTest.java
+		target/
+		|  site/
+		|  |  css/
+		|  |  images/
+		|  |  index.html
+		|  |  project-info.html
+		|  |  project-summary.html
+		|  |  ...
+		</p>
+		
+		<p>
+		Cada arquivo HTML corresponde à uma seção do site do projeto. Vamos
+		abrir o arquivo index.html no browser e ver o resultado.
+		</p>
 	</body>
 </html>
