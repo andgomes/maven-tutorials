@@ -1,0 +1,7 @@
+motivação para criar um javadoc
+o plugin Javadoc e o goal javadoc
+download do projeto Maven com os comentários javadoc
+executar o goal javadoc
+mostrar arquivos criados
+abrir index.html
+mostrar opções de navegação
