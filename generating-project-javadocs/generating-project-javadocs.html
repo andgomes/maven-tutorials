@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Gerando os Javadocs de um Projeto</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
 		<h1>Gerando os Javadocs de um Projeto</h1>
@@ -18,6 +19,52 @@
 		javadoc e são delimitados pelas strings "/**" e "*/". Neste tutorial,
 		veremos como gerar os javadocs de um projeto Maven utilizando a
 		ferramenta javadoc através do plugin Javadoc.
+		</p>
+		
+		<p>
+		Como exemplo, vamos utilizar o projeto string-int-math, um projeto
+		simples que contém uma classe utilitária, uma classe de exceção e uma
+		classe de teste. Faça o download e extraia o projeto. Segue abaixo
+		alguns fragmentos das classes e do arquivo POM.
+		</p>
+		
+		&lt; &gt;
+		
+		<p>
+		&lt;project ...&gt; <br />
+		--... <br />
+		--&lt;groupId&gt;org.andgomes&lt;/groupId&gt; <br />
+		--&lt;artifactId&gt;string-int-math&lt;/artifactId&gt; <br />
+		--&lt;packaging&gt;jar&lt;/packaging&gt; <br />
+  		--&lt;version&gt;0.0.1&lt;/version&gt; <br />
+		--&lt;name&gt;String-Int Math&lt;/name&gt; <br />
+		--... <br />
+		--&lt;build&gt; <br />
+		----&lt;plugins&gt; <br />
+		------&lt;plugin&gt; <br />
+		--------&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; <br />
+		--------&lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt; <br />
+		--------&lt;version&gt;2.10.4&lt;/version&gt; <br />
+		------&lt;/plugin&gt; <br />
+		----&lt;/plugins&gt; <br />
+		--&lt;/build&gt; <br />
+		--&lt;dependencies&gt; <br />
+		----&lt;dependency&gt; <br />
+		------&lt;groupId&gt;junit&lt;/groupId&gt; <br />
+		------&lt;artifactId&gt;junit&lt;/artifactId&gt; <br />
+		------&lt;version&gt;4.12&lt;/version&gt; <br />
+		------&lt;scope&gt;test&lt;/scope&gt; <br />
+		----&lt;/dependency&gt; <br />
+		--&lt;/dependencies&gt; <br />
+		&lt;/project&gt;
+		</p>
+		
+		<p>
+		---StringIntMath.java---
+		</p>
+		
+		<p>
+		---StringIntMathTest.java---
 		</p>
 	</body>
 </html>
