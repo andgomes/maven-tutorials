@@ -28,8 +28,6 @@
 		alguns fragmentos das classes e do arquivo POM.
 		</p>
 		
-		&lt; &gt;
-		
 		<p>
 		&lt;project ...&gt; <br />
 		--... <br />
@@ -68,8 +66,8 @@
 		</p>
 		
 		<p>
-		A classe StringIntMath possui comentários Javadoc descrevendo a classe e
-		todos os métodos. Esses comentários serão inseridos na página da
+		A classe StringIntMath possui comentários Javadoc para a descrição da
+		classe e dos métodos. Esses comentários serão inseridos na página da
 		documentação pelo plugin Javadoc ao executarmos o goal javadoc.
 		</p>
 		
@@ -79,27 +77,27 @@
 		
 		<p>
 		As páginas da documentação serão criadas e armazenadas no diretório
-		target/site/api-docs. A estrutura do diretório string-math-api deve
-		resultar na seguinte organização:
+		target/site/api-docs. O diretório string-math-api deve resultar na
+		seguinte estrutura:
 		</p>
 		
 		<p>
-		pom.xml
-		src/
-		--main/java/org/andgomes/
-		----stringmath/
-		------StringIntMath.java
-		------exception/
-		--------InvalidStringNumberException.java
-		--test/java/org/andgomes/stringmath/StringIntMathTest.java
-		--target/
-		----javadoc-bundle-options/
-		----site/apidocs/
-		------org/andgomes/stringmath/
-		------resources/
-		------index.html
-		------package-list
-		------allclasses-frame.html
+		pom.xml <br />
+		src/ <br />
+		--main/java/org/andgomes/ <br />
+		----stringmath/ <br />
+		------StringIntMath.java <br />
+		------exception/ <br />
+		--------InvalidStringNumberException.java <br />
+		--test/java/org/andgomes/stringmath/StringIntMathTest.java <br />
+		--target/ <br />
+		----javadoc-bundle-options/ <br />
+		----site/apidocs/ <br />
+		------org/andgomes/stringmath/ <br />
+		------resources/ <br />
+		------index.html <br />
+		------package-list <br />
+		------allclasses-frame.html <br />
 		------...
 		</p>
 		
@@ -111,6 +109,16 @@
 		
 		<p>
 		---index.html no browser---
+		</p>
+		
+		<p>
+		Clicando na classe StringIntMath na seção All Classes no canto esquerdo,
+		podemos ver a documentação da classe com a descrição, o nome do autor e
+		a versão, além descrição de cada método na seção Method Summary.
+		</p>
+		
+		<p>
+		---página javadoc da classe StringIntMath---
 		</p>
 	</body>
 </html>
