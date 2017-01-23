@@ -66,5 +66,51 @@
 		<p>
 		---StringIntMathTest.java---
 		</p>
+		
+		<p>
+		A classe StringIntMath possui comentários Javadoc descrevendo a classe e
+		todos os métodos. Esses comentários serão inseridos na página da
+		documentação pelo plugin Javadoc ao executarmos o goal javadoc.
+		</p>
+		
+		<p>
+		$ mvn javadoc:javadoc
+		</p>
+		
+		<p>
+		As páginas da documentação serão criadas e armazenadas no diretório
+		target/site/api-docs. A estrutura do diretório string-math-api deve
+		resultar na seguinte organização:
+		</p>
+		
+		<p>
+		pom.xml
+		src/
+		--main/java/org/andgomes/
+		----stringmath/
+		------StringIntMath.java
+		------exception/
+		--------InvalidStringNumberException.java
+		--test/java/org/andgomes/stringmath/StringIntMathTest.java
+		--target/
+		----javadoc-bundle-options/
+		----site/apidocs/
+		------org/andgomes/stringmath/
+		------resources/
+		------index.html
+		------package-list
+		------allclasses-frame.html
+		------...
+		</p>
+		
+		<p>
+		Vamos abrir o arquivo index.html no browser e ver o resultado. Esse
+		arquivo contém o Overview do projeto, com o nome definido na tag
+		&lt;name&gt; e uma lista dos packages.
+		</p>
+		
+		<p>
+		---index.html no browser---
+		</p>
 	</body>
 </html>
