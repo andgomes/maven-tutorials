@@ -1,0 +1,7 @@
+introdução(juntar os últimos dois posts)
+utilizar o projeto string-int-math
+mostrar o arquivo pom alterado
+configuração do plugin Javadoc na seção reporting
+invocar a fase site
+mostrar nova seção criada(Project Reports)
+clicar e mostrar página do Javadocs
