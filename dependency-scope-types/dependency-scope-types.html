@@ -26,5 +26,48 @@
 		já que o Maven não inclui as classes de teste quando o artefato é
 		instalado no repositório).
 		</p>
+		
+		<p>
+		Segue abaixo uma breve descrição de cada tipo de escopo. Ao final da
+		descrição é informado se uma dependência com aquele tipo de escopo é
+		incluída como dependência transitiva ou não.
+		</p>
+		
+		<p>
+		compile: Se nenhum escopo for especificado para uma dependência, compile
+		é o padrão. Se uma dependência tem o escopo compile, ela será incluída
+		em todos os classpaths do projeto. <strong>Transitivo</strong>
+		</p>
+		
+		<p>
+		runtime: Uma dependência com o escopo runtime é necessária na execução e
+		nos testes, mas não na compilação. Por consequência, a dependência
+		é incluída nos classpaths dessas duas fases. <strong>Transitivo</strong>
+		</p>
+		
+		<p>
+		test: O escopo test deve ser especificado nas dependências que são
+		utlizadas nas classes de teste. Nos tutoriais anteriores, quando criamos
+		projetos com o archetype Quickstart, o JUnit já era incluído com esse
+		escopo. Uma dependência com esse escopo é incluída na compilação e
+		execução dos testes. <strong>Não-Transitivo</strong>
+		</p>
+		
+		<p>
+		provided: Se uma dependência tem o escopo provided, assume-se que ela
+		será fornecida pelo ambiente de execução onde o projeto será compilado
+		e executado. Por exemplo, a Servlet API geralmente deve ser declarada
+		com o escopo provided, pois o Web Container contém e utiliza o arquivo
+		JAR da API na compilação e em tempo de execução.
+		<strong>Não-Transitivo</strong>
+		</p>
+		
+		<p>
+		system: O escopo system é similar ao provided, a diferença é que o
+		caminho do artefato deve ser especificado na declaração da dependência.
+		Devido a isso, perceba que, ao menos em um ambiente totalmente
+		controlado, esse escopo pode levar a sérios problemas de portabilidade.
+		<strong>Não-Transitivo</strong>
+		</p>
 	</body>
 </html>

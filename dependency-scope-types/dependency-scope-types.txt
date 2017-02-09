@@ -2,5 +2,4 @@ escopo servem para limitar a quantidade de dependências transitivas
 falar brevemente dos tipos de escopo
 o escopo compile é o padrão
 quais são transitivas e quais não são
-o escopo system e a obrigatoriedade do elemento systemPath
 as versões recentes do Maven permitem o escopo import
