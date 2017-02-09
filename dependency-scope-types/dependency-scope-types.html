@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Tipos de Escopo de uma Dependência</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+		<h1>Tipos de Escopo de uma Dependência</h1>
+		
+		<p>
+		Toda vez que um projeto A declara um projeto B como dependência, se B
+		é dependente de outros projetos, alguns desses artefatos podem se tornar
+		dependências transitivas de A. Se B é uma dependência trazida de um
+		repositório remoto, essas dependências transitivas também são baixadas
+		para o repositório local.
+		</p>
+		
+		<p>
+		Para limitar a quantidade de dependências transitivas trazidas de um
+		repositório, o Maven permite a especificação do escopo na declaração das
+		dependências. Há cinco tipos de escopo: compile, runtime, test, provided
+		e system. Os três primeiros estão relacionados ao momento em que a
+		dependência é utilizada. Se uma dependência só é necessária para os
+		testes, não é preciso que ela seja trazida como dependência transitiva(
+		já que o Maven não inclui as classes de teste quando o artefato é
+		instalado no repositório).
+		</p>
+	</body>
+</html>
