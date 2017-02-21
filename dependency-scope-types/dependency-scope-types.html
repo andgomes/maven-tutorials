@@ -18,7 +18,7 @@
 		
 		<p>
 		Para limitar a quantidade de dependências transitivas trazidas de um
-		repositório, o Maven permite a especificação do escopo na declaração das
+		repositório, o Maven permite a especificação de escopo na declaração das
 		dependências. Há cinco tipos de escopo: compile, runtime, test, provided
 		e system. Os três primeiros estão relacionados ao momento em que a
 		dependência é utilizada. Se uma dependência só é necessária para os
@@ -68,6 +68,15 @@
 		Devido a isso, perceba que, ao menos em um ambiente totalmente
 		controlado, esse escopo pode levar a sérios problemas de portabilidade.
 		<strong>Não-Transitivo</strong>
+		</p>
+		
+		<p>
+		A partir da versão 2.0.9 do Maven, um tipo de escopo especial foi
+		incluído: o import. O escopo import é utilizado especificamente no
+		gerenciamento de dependências em projetos com muitos módulos, com o
+		intuito de evitar declarações da mesma dependência espalhadas nos vários
+		arquivos POM do projeto. Como a explicação desse escopo requer alguns
+		exemplos, deixaremos esse assunto para outro post.
 		</p>
 	</body>
 </html>
