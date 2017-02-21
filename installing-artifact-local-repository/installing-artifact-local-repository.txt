@@ -1,0 +1,6 @@
+motivação(testar antes de instalar em repo remoto)
+exemplo de projeto
+invocando a fase install
+localização do artefato no repositório local
+utilizando o projeto como uma dependência
+a ordem em que o Maven procura por uma dependência(remoto -> local)

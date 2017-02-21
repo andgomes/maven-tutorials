@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Instalando um Artefato no Repositório Local</title>
+	</head>
+	<body>
+		<h1>Instalando um Artefato no Repositório Local</h1>
+		
+		<p>
+		Neste tutorial, iremos mostrar como instalar um artefato no repositório
+		local do Maven que, por padrão, fica no diretório ~/.m2/repository.
+		Mesmo sabendo que não há muita utilidade em utilizar o repositório local
+		em um computador não-servidor, pode ser interessante testar o artefato
+		utilizando-o como dependência de outro projeto antes de instalá-lo em
+		um repositório remoto.
+		</p>
+		
+		<p>
+		Como exemplo, vamos criar um projeto simples com o archetype Quickstart
+		e chamá-lo de congrats-project. Esse projeto nada mais terá do que uma
+		classe com um único método que retorna uma String como mensagem de
+		parabéns para um nome que passaremos no construtor.
+		</p>
+		
+		<p>
+		$ mvn archetype:generate -DgroupId=org.andgomes
+		-DartifactId=congrats-project -Dversion=1.0
+		-DarchetypeGroupId=org.apache.maven.archetypes
+		-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+		</p>
+		
+		<p>
+		Delete o arquivo App.java e crie o CongratsMessenger.java, a única
+		classe da nossa aplicação, no mesmo diretório.
+		</p>
+		
+		<p>
+		---CongratsMessenger.java---
+		</p>
+	</body>
+</html>
