@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Instalando um Artefato no Repositório Local</title>
+		<meta http-equiv="Content-Type" charset="utf-8" />
 	</head>
 	<body>
 		<h1>Instalando um Artefato no Repositório Local</h1>
@@ -37,6 +38,94 @@
 		
 		<p>
 		---CongratsMessenger.java---
+		</p>
+		
+		<p>
+		Agora vamos invocar a fase install, que utiliza o plugin Install para
+		salvar o arquivo JAR da aplicação, gerado na fase package(a fase package
+		é executada antes da fase install no build lifecycle), no repositório
+		local.
+		</p>
+		
+		<p>
+		$ mvn install
+		</p>
+		
+		<p>
+		[INFO] Installing /home/anderson/congrats-project/target/congrats-project-1.0.jar
+		to /home/anderson/.m2/repository/org/andgomes/congrats-project/1.0/congrats-project-1.0.jar
+		</p>
+		
+		<p>
+		Durante a instalação, o Maven informa que o artefato está sendo
+		armazenado no diretório do repositório local. Vamos dar uma olhada em
+		como ficou a estrutura do nosso artefato dentro do repositório.
+		</p>
+		
+		<p>
+		org/ <br />
+		|  andgomes/ <br />
+		|  |  congrats-project/ <br />
+		|  |  |  1.0/ <br />
+		|  |  |  |  congrats-project-1.0.jar <br />
+		|  |  |  |  congrats-project-1.0.pom <br />
+		|  |  |  |  _remote.repositories
+		</p>
+		
+		<p>
+		Observe que o repositório mais aninhado é identificado com a versão do
+		projeto e o arquivo POM do projeto foi renomeado. O arquivo
+		_remote.repositories é mantido pelo Maven para armazenar o nome do
+		repositório remoto do qual a dependência foi baixada. No nosso caso,
+		como instalamos o artefato localmente, nada é registrado.
+		</p>
+		
+		<p>
+		Agora, para demonstrar a utilização do projeto congrats-project, vamos
+		criar um outro projeto simples que o declara como dependência e utiliza
+		a classe CongratsMessenger para exibir uma mensagem de parabéns no
+		terminal.
+		</p>
+		
+		<p>
+		$ mvn archetype:generate -DgroupId=org.andgomes
+		-DartifactId=simple-project
+		-DarchetypeArtifactId=maven-archetype-quickstart
+		-DarchetypeGroupId=org.apache.maven.archetypes -DinteractiveMode=false
+		</p>
+		
+		<p>
+		Adicionamos a declaração de dependência no arquivo POM e modificamos a
+		classe App para utilizar o método getCongratsMessage() e exibir a
+		mensagem.
+		</p>
+		
+		<p>
+		---pom.xml---
+		</p>
+		
+		<p>
+		---App.java---
+		</p>
+		
+		<p>
+		Para testar se tudo está funcionando corretamente, vamos compilar e
+		executar a classe App com o plugin Exec do Maven passando como parâmetro
+		o nome da classe totalmente qualificado. Dentro do diretório
+		simple-project, execute os comandos:
+		</p>
+		
+		<p>
+		$ mvn compile <br />
+		$ mvn exec:java -Dexec.mainClass="org.andgomes.App"
+		</p>
+		
+		<p>
+		Saída:
+		</p>
+		
+		<p>
+		Congratulations, Anderson!
 		</p>
 	</body>
 </html>
