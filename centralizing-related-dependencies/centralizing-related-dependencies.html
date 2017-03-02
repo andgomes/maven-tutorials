@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Centralizando Dependências com o Escopo Import</title>
+		<meta http-equiv="Content-Type" charset="utf-8" />
+	</head>
+	<body>
+		<h1>Centralizando Declarações de Dependências</h1>
+		
+		<p>
+		Quando estamos utilizando o Maven para um tipo de aplicação popular(por
+		exemplo, uma aplicação web), é comum, por serem largamente utilizadas e,
+		consequentemente, terem uma grande comunidade, reutilizarmos APIs
+		desenvolvidas por outras empresas. Geralmente, como essas bibliotecas
+		são relacionadas, utilizamos mais de uma API e, por esse motivo, as
+		declarações dessas dependências aparecem duplicadas nos vários arquivos
+		POM do projeto.
+		</p>
+		
+		<p>
+		Uma das maneiras de evitar esse problema é centralizar essas
+		dependências em um único arquivo POM e, ao invés de declarar cada uma
+		separadamente, referenciar apenas esse arquivo quando for necessário
+		utilizar as bibliotecas. Existem pelo menos duas maneiras de se fazer
+		isso, uma utilizando a herança entre projetos e outra, o escopo import.
+		</p>
+		
+		<p>
+		Antes de vermos como funcionam as duas formas, precisamos entender a
+		seção na qual as dependências serão declaradas: a seção
+		dependencyManagement. Essa seção, diferentemente da seçao dependencies,
+		apenas declara dependências, não faz o download nem as concretiza. Isso
+		quer dizer que, se declarararmos uma dependência apenas na seção
+		dependencyManagement, teremos um erro no build ao tentar utilizá-la em
+		alguma parte da aplicação. Essa propriedade evita que todo projeto que
+		herde ou importe outro projeto com dependências declaradas na seção
+		dependencyManagement tenha o overhead de ter que fazer o download de
+		bibliotecas desnecessárias.
+		</p>
+		
+		<p>
+		Dito isso, vamos criar um projeto com um arquivo POM que centraliza três
+		dependências na seção dependencyManagement. Como o projeto só possui o
+		arquivo pom.xml, vamos criá-lo com o archetype POM-Root da Codehaus.
+		</p>
+		
+		<p>
+		$ mvn archetype:generate -DartifactId=common-depedencies
+		-DgroupId=org.andgomes -Dversion=0.0.1
+		-DarchetypeGroupId=org.codehaus.mojo.archetypes
+		-DarchetypeArtifactId=pom-root -DarchetypeVersion=1.1
+		-DinteractiveMode=false
+		</p>
+		
+		<p>
+		Vamos abrir o arquivo POM do diretório common-dependencies e adicionar as
+		declarações das dependências:
+		</p>
+		
+		<p>
+		---pom.xml---
+		</p>
+	</body>
+</html>

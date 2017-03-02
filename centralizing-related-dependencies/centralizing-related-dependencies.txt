@@ -1,0 +1,7 @@
+motivação(dependências relacionadas aparacem em vários arquivos)
+duas formas: herança e escopo import
+a seção depedencyManagement
+criando um arquivo POM com as dependências relacionadas
+problema de se utilizar a herança: só um parent é permitido
+o escopo import
+arquivo POM que declara o BOM como dependência com o escopo import
