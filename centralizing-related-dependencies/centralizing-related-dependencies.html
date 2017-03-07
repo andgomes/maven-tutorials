@@ -15,15 +15,19 @@
 		desenvolvidas por outras empresas. Geralmente, como essas bibliotecas
 		são relacionadas, utilizamos mais de uma API e, por esse motivo, as
 		declarações dessas dependências aparecem duplicadas nos vários arquivos
-		POM do projeto.
+		POM do projeto. Dessa forma, podemos ter diferentes versões de
+		dependências nos vários submódulos e, consequentemente, possíveis
+		conflitos de versões durante o build.
 		</p>
 		
 		<p>
 		Uma das maneiras de evitar esse problema é centralizar essas
 		dependências em um único arquivo POM e, ao invés de declarar cada uma
 		separadamente, referenciar apenas esse arquivo quando for necessário
-		utilizar as bibliotecas. Existem pelo menos duas maneiras de se fazer
-		isso, uma utilizando a herança entre projetos e outra, o escopo import.
+		utilizar as bibliotecas. Assim, quando for preciso atualizar uma
+		dependência, só é necessário modificar esse arquivo. Existem pelo menos
+		duas maneiras de se fazer isso, uma utilizando a herança entre projetos
+		e outra, o escopo import.
 		</p>
 		
 		<p>
@@ -54,10 +58,51 @@
 		</p>
 		
 		<p>
-		Vamos abrir o arquivo POM do diretório common-dependencies e adicionar as
-		declarações das dependências:
+		Vamos abrir o arquivo POM do diretório common-dependencies e adicionar
+		as declarações das dependências:
 		</p>
-		
+
+		<p>
+		---pom.xml---
+		</p>
+
+		<p>
+		Agora que temos as declarações das dependências em um arquivo POM
+		separado, quando criarmos um projeto que utilize essas dependências, só
+		precisamos herdar o common-dependencies e declarar o groupId e o
+		artifactId das dependências necessárias. Por exemplo, se nosso projeto
+		precisar apenas da API Servlet e da JSTL, o arquivo pom.xml terá o
+		seguinte conteúdo.
+		</p>
+
+		<p>
+		---pom.xml---
+		</p>
+
+		<p>
+		Perceba que, como não declaramos as versões das dependências, as versões
+		declaradas no POM do projeto common-dependencies serão utilizadas. Caso
+		informássemos as versões nesse arquivo, essas versões teriam prioridade
+		sobre as versões do common-dependencies e seriam utilizadas durante o
+		build.
+		</p>
+
+		<p>
+		O problema com essa abordagem é que só é possível declarar um parent por
+		projeto. Nesse caso, se tivermos dois projetos agrupadores de
+		dependências e um terceiro projeto que precise utilizar os dois,
+		teríamos que fazer com que um dos projetos agrupadores herdasse o outro,
+		o que seria uma má utilização do conceito de herança.
+		</p>
+
+		<p>
+		A partir da versão 2.0.9 do Maven, podemos superar essa restrição
+		importando as declarações da seção dependencyManagement dos projetos
+		agrupadores que precisamos. Vamos utilizar como exemplo um projeto que
+		importa apenas o common-dependencies, mas a mesma sintaxe pode ser
+		utilizada para importar quantos projetos for preciso.
+		</p>
+
 		<p>
 		---pom.xml---
 		</p>
