@@ -106,5 +106,17 @@
 		<p>
 		---pom.xml---
 		</p>
+
+		<p>
+		Da mesma forma que não precisamos especificar as versões das
+		dependências utilizando herança, não precisamos aqui também. Nesse caso,
+		as managed dependencies do projeto common-dependencies, ao invés de
+		herdadas, foram importadas pelo projeto simple-project. A única
+		diferença da declaração de qualquer outra dependência é apenas o escopo
+		e, como a dependência não é do tipo JAR, tivemos que especificar o tipo
+		na declaração. É importante notar que antes de podermos utilizar o
+		projeto common-dependencies como dependência, primeiramente temos que
+		--link-post--instalá-lo no repositório local--link-post--.
+		</p>
 	</body>
 </html>
