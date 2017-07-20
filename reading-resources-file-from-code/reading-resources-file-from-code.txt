@@ -1,11 +1,6 @@
 motivação(às vezes é preciso obter alguma informação a partir de arquivos de configuração)
 exemplo: lendo login e password a partir de um arquivo de resource
-ao invés de inserir diretamente no arquivo de resource, iremos utilizar filtros
-de propriedades do arquivo POM
-criando as propriedades no arquivo POM
 criando o arquivo de resource
-habilitando a filtragem de arquivos de resource
 lendo as propriedades programaticamente
 mvn compile
-para onde os arquivos foram copiados(target/)
 resultado: mvn exec:java

@@ -7,5 +7,94 @@
 	</head>
 	<body>
 		<h1>Lendo Arquivos de Resource a partir de Programas Java</h1>
+		
+		<p>
+		Muitas vezes precisamos lidar com a leitura de propriedades de arquivos
+		de resource, principalmente para evitar hardcoded strings espalhadas
+		pelas classes do projeto. Neste post iremos aprender a ler propriedades
+		programaticamente através de um exemplo onde precisamos obter os valores
+		dos campos username e password de um usuário.
+		</p>
+		
+		<p>
+		Vamos criar um projeto Maven chamado reading-properties com o archetype
+		quickstart para tirarmos proveito das configurações-padrão do Maven em
+		relação a diretórios de código e resources e evitar ter que configurar a
+		localização dos arquivos no classpath manualmente.
+		</p>
+		
+		<p>
+		$ mvn archetype:generate -DgroupId=org.andgomes
+		-DartifactId=reading-properties
+		-DarchetypeGroupId=org.apache.maven.archetypes
+		-DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1
+		-DinteractiveMode=false
+		</p>
+		
+		<p>
+		Antecipando a compilação da classe que irá ler as propriedades do
+		arquivo de resources, vamos configurar a versão do Java utilizada pelo
+		Maven através das propriedades no arquivo POM para a versão 1.7.
+		</p>
+		
+		<p>
+		---pom.xml(maven.compiler.source e maven.compiler.target)---
+		</p>
+		
+		<p>
+		Agora vamos criar o arquivo my.properties e salvá-lo no diretório
+		src/main/resources, o diretório padrão de arquivos de resources.
+		</p>
+		
+		<p>
+		my.properties
+		</p>
+		
+		<p>
+		username=angomes <br />
+		password=qwe123
+		</p>
+		
+		<p>
+		Com tudo pronto, nosso objetivo é ler o arquivo my.properties e exibir
+		os valores das duas propriedades. Para isso, vamos criar a classe
+		PropertiesReader no diretório src/main/java/org/andgomes que utiliza a
+		classe Properties para extrair os valores do arquivo my.properties.
+		</p>
+		
+		<p>
+		---PropertiesReader.java---
+		</p>
+		
+		<p>
+		Primeiro abrimos o arquivo como um InputStream utilizando o método
+		getResourceAsStream() através do class loader da nossa classe e em
+		seguida carregamos e lemos cada propriedade com os métodos load() e
+		getProperty(), respectivamente.
+		</p>
+		
+		<p>
+		Vamos compilar a nossa classe e executá-la com o Maven. 
+		</p>
+		
+		<p>
+		$ mvn compile <br />
+		$ mvn exec:java -Dexec.mainClass="org.andgomes.PropertiesReader" <br /> <br />
+		Username: andgomes <br />
+		Password: qwe123
+		</p>
+		
+		<p>
+		Perceba que precisamos especificar um class
+		literal(PropertiesReader.class) porque estamos em um método estático. Se
+		precisarmos carregar o InputStream dentro de um método não estático,
+		podemos acessar a classe com o método getClass(). Por exemplo,
+		poderíamos implementar um método que retorna os valores das propriedades
+		de um arquivo da seguinte maneira:
+		</p>
+		
+		<p>
+		---Map&lt;String, String&gt;getProperties(String fileName)---
+		</p>
 	</body>
 </html>
