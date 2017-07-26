@@ -1,11 +1,9 @@
 motivação de se proteger informações(principalmente senhas)
 suposição de que um projeto é versionado e mantido por algumas pessoas
 a proteção do arquivo settings.xml(acessível apenas pelo usuário do computador)
-exemplo: acesso à senha de banco de dados(utilizando o JDBC)
+exemplo: acesso à senha de banco de dados
 configuração das properties login e password no settings.xml
 criação do arquivo de resource
 habilitando os filtros para os arquivos de resource
 lendo as propriedades do arquivo de resource a partir do código Java
-executando um statement SQL
-mostrar o resultado no banco
 cuidados com o .gitignore(ignorar o diretório target/)

@@ -7,5 +7,80 @@
 	</head>
 	<body>
 		<h1>Protegendo Informações Sensíveis em Projetos Compartilhados</h1>
+		
+		<p>
+		Quando estamos trabalhando em projetos compartilhados, podemos querer
+		proteger informações específicas como emails e senhas pessoais dos
+		demais desenvolvedores. Neste post veremos como esconder tais
+		informações utilizando o arquivo settings do Maven.
+		</p>
+		
+		<p>
+		A ideia é salvar as informações sensíveis no arquivo settings.xml,
+		localizado no diretório .m2 da pasta pessoal do usuário, e referênciar
+		as propriedades com placeholders em um arquivo de resource.
+		</p>
+		
+		<p>
+		Vamos criar duas propriedades no settings que representam o usuário e
+		senha de um banco de dados.
+		</p>
+		
+		<p>
+		---settings.xml---
+		</p>
+		
+		<p>
+		Como só podemos criar propriedades nesse arquivo dentro de um profile,
+		criamos um default e o deixamos ativado por padrão para que as
+		propriedades estejam sempre configuradas.
+		</p>
+		
+		<p>
+		No projeto Maven, criaremos um arquivo de resource chamado db.properties
+		com placeholders para as duas propriedades que configuramos.
+		</p>
+		
+		<p>
+		---db.properties---
+		</p>
+		
+		<p>
+		Para que esses placeholders sejam substituídos pelos valores corretos no
+		momento em que fizermos o build, precisamos ativar a filtragem dos
+		arquivos de resource no POM do projeto.
+		</p>
+		
+		<p>
+		---pom.xml com filtragem ativada---
+		</p>
+		
+		<p>
+		Se invocarmos a fase package, o arquivo db.properties será copiado para
+		o diretório target com os valores dos placeholders substituídos e a
+		classe responsável por ler o arquivo poderá obter os valores das
+		propriedades.
+		</p>
+		
+		<p>
+		$ mvn package
+		</p>
+		
+		<p>
+		---db.properties placeholders substituídos---
+		</p>
+		
+		<p>
+		Perceba que, como o arquivo de resource é copiado para o diretório
+		target com os valores reais das propriedades, de nada adiantará todo
+		esse processo se esse diretório for compartilhado. Devemos ter o cuidado
+		de apagá-lo com o comando clean quando compartilharmos o diretório do
+		projeto ou, se um sistema de versionamente estiver sendo utilizado,
+		adicioná-lo aos diretórios ignorados.
+		</p>
+		
+		<p>
+		---posts sugeridos---
+		</p>
 	</body>
 </html>
