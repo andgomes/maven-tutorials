@@ -1,0 +1,10 @@
+motivação(óbviamente é criar um jar executável)
+exemplo: projeto que calcula o fatorial(método na própria classe)
+mvn package e mostra que não é executável com java -jar
+parece que só falta adicionar um Main-Class
+adiciona um Main-Class com o plugin jar
+dá certo e mostra que deu certo
+se o projeto tiver dependências? (exemplo com Guava)
+vê que dá problema e explica o problema
+solução com o plugin assembly e o descriptorRef jar-with-dependencies
+explica o nome do jar gerado e por quê não é o mesmo jar gerado pelo package

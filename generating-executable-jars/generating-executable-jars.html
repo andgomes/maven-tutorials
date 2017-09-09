@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Gerando JARs Executáveis</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+		<h1>Gerando JARs Executáveis</h1>
+		
+		<p>
+		Se você já tentou executar o jar gerado pela fase package do Maven, deve
+		ter visto que não é possível executá-lo somente com o comando java -jar.
+		Isso se deve ao fato de que, por padrão, o Maven não adiciona o campo
+		Main-Class no Manifest do jar gerado e, portanto, o Java não tem como
+		saber qual a classe que possui o método main no projeto. Neste tutorial
+		iremos aprender como adicionar esse campo no Manifest do nosso jar e
+		torná-lo executável.
+		</p>
+	</body>
+</html>
