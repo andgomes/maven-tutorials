@@ -13,9 +13,58 @@
 		ter visto que não é possível executá-lo somente com o comando java -jar.
 		Isso se deve ao fato de que, por padrão, o Maven não adiciona o campo
 		Main-Class no Manifest do jar gerado e, portanto, o Java não tem como
-		saber qual a classe que possui o método main no projeto. Neste tutorial
-		iremos aprender como adicionar esse campo no Manifest do nosso jar e
-		torná-lo executável.
+		saber qual classe possui o método main no projeto. Neste tutorial iremos
+		aprender como adicionar esse campo no Manifest do nosso jar e torná-lo
+		executável.
+		</p>
+		
+		<p>
+		Como exemplo, vamos <a href="#">criar um projeto</a> chamado factorial-project
+		e uma única classe que calcula o fatorial de um número informado pelo usuário.
+		Essa é a classe que gostaríamos que fosse executada quando executarmos o arquivo jar.
+		</p>
+		
+		<p>
+		---FactorialCalculator.java---
+		</p>
+		
+		<p>
+		Com a classe salva no diretório, vamos invocar a fase package para que o
+		jar seja gerado.
+		</p>
+		
+		<p>
+		$ mvn package
+		</p>
+		
+		<p>
+		Podemos verificar que o arquivo jar do projeto foi criado no diretório
+		target. Agora só precisamos executá-lo com o comando java -jar.
+		</p>
+		
+		<p>
+		$ cd target <br />
+		$ java -jar factorial-project-1.0-SNAPSHOT.jar
+		</p>
+		
+		<p>
+		nenhum atributo de manifesto principal em factorial-project-1.0-SNAPSHOT.jar
+		</p>
+		
+		<p>
+		Veja que o Maven nos mostra uma mensagem dizendo que o arquivo MANIFEST do
+		arquivo jar não possui nenhum atributo, o que impossibilita o Java de
+		saber qual classe deve executar. De fato, se extrairmos o jar gerado pelo
+		Maven, podemos ver que não existe um atributo Main-Class no arquivo
+		META-INF/MANIFEST.
+		</p>
+		
+		<p>
+		Manifest-Version: 1.0 <br />
+		Archiver-Version: Plexus Archiver <br />
+		Built-By: anderson <br />
+		Created-By: Apache Maven 3.3.9 <br />
+		Build-Jdk: 1.8.0_131
 		</p>
 	</body>
 </html>
