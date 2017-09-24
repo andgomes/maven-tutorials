@@ -13,15 +13,16 @@
 		ter visto que não é possível executá-lo somente com o comando java -jar.
 		Isso se deve ao fato de que, por padrão, o Maven não adiciona o campo
 		Main-Class no Manifest do jar gerado e, portanto, o Java não tem como
-		saber qual classe possui o método main no projeto. Neste tutorial iremos
+		saber qual classe do projeto possui o método main. Neste tutorial iremos
 		aprender como adicionar esse campo no Manifest do nosso jar e torná-lo
 		executável.
 		</p>
 		
 		<p>
-		Como exemplo, vamos <a href="#">criar um projeto</a> chamado factorial-project
-		e uma única classe que calcula o fatorial de um número informado pelo usuário.
-		Essa é a classe que gostaríamos que fosse executada quando executarmos o arquivo jar.
+		Como exemplo, vamos <a href="#">criar um projeto</a> chamado
+		factorial-project e uma única classe que calcula o fatorial de um número
+		informado pelo usuário. Essa é a classe que gostaríamos que fosse
+		executada quando executarmos o arquivo jar.
 		</p>
 		
 		<p>
@@ -29,8 +30,8 @@
 		</p>
 		
 		<p>
-		Com a classe salva no diretório, vamos invocar a fase package para que o
-		jar seja gerado.
+		Com a classe salva, vamos invocar a fase package para gerar o arquivo
+		jar.
 		</p>
 		
 		<p>
@@ -48,14 +49,14 @@
 		</p>
 		
 		<p>
-		nenhum atributo de manifesto principal em factorial-project-1.0-SNAPSHOT.jar
+		---nenhum atributo de manifesto principal em factorial-project-1.0-SNAPSHOT.jar---
 		</p>
 		
 		<p>
-		Veja que o Maven nos mostra uma mensagem dizendo que o arquivo MANIFEST do
-		arquivo jar não possui nenhum atributo, o que impossibilita o Java de
-		saber qual classe deve executar. De fato, se extrairmos o jar gerado pelo
-		Maven, podemos ver que não existe um atributo Main-Class no arquivo
+		Veja que o Maven nos mostra uma mensagem dizendo que o arquivo MANIFEST
+		do arquivo jar não possui nenhum atributo, o que impossibilita o Java de
+		saber qual classe deve executar. De fato, se extrairmos o jar gerado
+		pelo Maven, podemos ver que não existe um atributo Main-Class no arquivo
 		META-INF/MANIFEST.
 		</p>
 		
@@ -65,6 +66,56 @@
 		Built-By: anderson <br />
 		Created-By: Apache Maven 3.3.9 <br />
 		Build-Jdk: 1.8.0_131
+		</p>
+		
+		<p>
+		Para adicionar a classe principal no MANIFEST, podemos utilizar o plugin
+		Jar do Maven adicionando a classe FactorialCalculator na tag mainClass
+		na configuração do plugin.
+		</p>
+		
+		<p>
+		---pom.xml---
+		</p>
+		
+		<p>
+		Se invocarmos a fase package novamente e executarmos o arquivo jar
+		gerado, podemos ver que o método main da classe FactorialCalculator é
+		chamado corretamente.
+		</p>
+		
+		<p>
+		$ cd target <br />
+		$ java -jar factorial-project-1.0-SNAPSHOT.jar
+		</p>
+		
+		<p>
+		Entre um número inteiro não-negativo: 4 <br />
+		O fatorial de 4 é 24
+		</p>
+		
+		<p>
+		Agora se abrirmos o MANIFEST do arquivo jar, podemos ver que o campo
+		Main-Class foi adicionado.
+		</p>
+		
+		<p>
+		Manifest-Version: 1.0 <br />
+		Built-By: anderson <br />
+		Created-By: Apache Maven 3.3.9 <br />
+		Build-Jdk: 1.8.0_131 <br />
+		Main-Class: org.andgomes.FactorialCalculator
+		</p>
+		
+		<p>
+		Ok, agora sabemos como gerar um jar executável com o plugin Jar. Porém,
+		nem todos os jars que gerarmos dessa forma serão executáveis, e o motivo
+		é que arquivos jar gerados da forma que fizemos não incluem as
+		dependências das classes. Por exemplo, se nosso projeto utilizasse a
+		biblioteca Guava para calcular o fatorial, essa biblioteca não seria
+		incluída no jar quando invocamos a fase package. Para resolver esse
+		problema, podemos utilizar o plugin Assembly, que iremos conhecer no
+		próximo tutorial.
 		</p>
 	</body>
 </html>
