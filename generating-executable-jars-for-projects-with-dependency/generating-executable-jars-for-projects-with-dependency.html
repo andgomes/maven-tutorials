@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Gerando JARs Executáveis em Projetos com Dependência</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+		<h1>Gerando JARs Executáveis em Projetos com Dependência</h1>
+		
+		<p>
+		No post anterior, vimos como fazer com que o arquivo jar gerado pela
+		fase package se tornasse executável. Porém, ao final do tutorial
+		comentamos que, para projetos que utilizam dependência, aquele método
+		não funcionava. Para mostrar esse caso, vamos modificar o exemplo do
+		post anterior para que, ao invés de utilizar nossa implementação do
+		método factorial, utilize a biblioteca Guava.
+		</p>
+		
+		<p>
+		---FactorialCalculator.java com Guava---
+		</p>
+		
+		<p>
+		Se configurarmos o plugin Jar da mesma forma que fizemos no tutorial
+		anterior e tentarmos executar o arquivo gerado, teremos o seguinte
+		resultado.
+		</p>
+		
+		<p>
+		obs: não podemos esquecer de declarar a dependência no arquivo POM
+		</p>
+		
+		<p>
+		---pom.xml---
+		</p>
+		
+		<p>
+		$ mvn package <br />
+		$ cd target <br />
+		$ java -jar factorial-project-1.0-SNAPSHOT.jar <br /> <br />
+		Entre um número inteiro não-negativo: 4 <br />
+		Exception in thread "main" java.lang.NoClassDefFoundError: com/google/common/math/IntMath <br />
+		----at org.andgomes.FactorialCalculator.main(FactorialCalculator.java:15) <br />
+		Caused by: java.lang.ClassNotFoundException: com.google.common.math.IntMath
+		</p>
+		
+		<p>
+		Veja que o Java não foi capaz de localizar a classe IntMath. O motivo é
+		que a biblioteca Guava não foi incluída no arquivo jar gerado quando
+		invocamos a fase package. Então, de forma geral, como poderemos incluir
+		as dependências de um projeto no artefato jar? Para contornar esse
+		problema, precisamos recorrer a outro plugin, o plugin Assembly.
+		</p>
+		
+		<p>
+		O plugin Assembly é um plugin que permite a criação e personalização de
+		artefatos gerados na fase package. No nosso caso, queremos apenas
+		incluir as dependências da classe FactorialCalculator para que possamos
+		executar o arquivo jar. Para isso, vamos adicionar o plugin Assembly no
+		POM e configurá-lo para que as dependências sejam incluídas
+		apropriadamente.
+		</p>
+		
+		<p>
+		---pom.xml modificado---
+		</p>
+		
+		<p>
+		Adicionamos uma execution indicando que o Maven deve executar o goal
+		single do plugin Assembly na fase package e declaramos um descriptorRef
+		do tipo jar-with-dependencies. O tipo do descriptorRef define o que será
+		incluído no arquivo jar gerado. O plugin Assembly possui três
+		descriptorRefs pré-definidos e permite a criação de descriptorRefs
+		customizados. No nosso caso, o descriptorRef jar-with-dependencies, como
+		o próprio nome diz, faz o que precisamos. Além disso, não podemos
+		esquecer de declarar a classe principal da aplicação no Manifest dentro
+		da tag archive.
+		</p>
+		
+		<p>
+		Agora vamos invocar a fase package e ver o que é gerado pelo Maven.
+		</p>
+		
+		<p>
+		$ mvn package
+		</p>
+		
+		<p>
+		Se entrarmos no diretório target, podemos ver que dois arquivos jars
+		foram gerados, um que já esperávamos(simple-guava-project-1.0-SNAPSHOT.jar)
+		e outro com um classificador jar-with-dependencies ao final. O plugin
+		Assembly cria um arquivo Jar diferente do original para garantir o
+		funcionamento padrão do Maven. Por exemplo, se outros projetos utilizam
+		o nosso como uma dependência, é desejável garantirmos que nenhum
+		artefato grande com todas as dependências incluídas precise ser baixado
+		pelos projetos dependentes.
+		</p>
+		
+		<p>
+		Se executarmos o arquivo com as dependências, veremos que agora não
+		temos mais o problema que tínhamos no início do post.
+		</p>
+		
+		<p>
+		$ cd target <br />
+		$ java -jar simple-guava-project-1.0-SNAPSHOT-jar-with-dependencies.jar <br /> <br />
+		Entre um número inteiro: 4 <br />
+		O fatorial de 4 é 24
+		</p>
+	</body>
+</html>

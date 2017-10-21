@@ -1,0 +1,11 @@
+motivação: post anterior não usava dependência, testar o post
+anterior no exemplo com Guava
+mostrar o código com Guava(mesma classe)
+executar e ver a mensagem de cannot find symbol
+apresentação do plugin Assembly, ideia geral
+modificar o pom.xml
+falar sobre o jar-with-dependencies
+mvn package e java -jar
+mostrar resultado
+porque o maven não inclui as dependências no jar por padrão? o propósito é ser
+utilizado como dependência
